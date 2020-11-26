@@ -1,0 +1,4 @@
+/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/Blob.dir
+/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/net.dir
