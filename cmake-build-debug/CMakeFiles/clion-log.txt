@@ -1,4 +1,4 @@
-/home/wyl/clion-2020.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/wyl/CLionProjects/CXXbasic
+/home/wyl/clion-2020.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/wyl/CLionProjects/CXXcaffe
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/wyl/CLionProjects/CXXbasic/cmake-build-debug
+-- Build files have been written to: /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug

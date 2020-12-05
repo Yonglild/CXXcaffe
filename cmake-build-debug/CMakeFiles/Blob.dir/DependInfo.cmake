@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wyl/CLionProjects/CXXbasic/Blob.cpp" "/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/Blob.dir/Blob.cpp.o"
+  "/home/wyl/CLionProjects/CXXcaffe/Blob.cpp" "/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/Blob.dir/Blob.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -12,6 +12,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../net.hpp"
   "../Blob.hpp"
+  "../SyncedMemory.hpp"
   )
 
 # Targets to which this target links.

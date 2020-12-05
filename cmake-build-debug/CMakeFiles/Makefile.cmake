@@ -50,4 +50,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Blob.dir/DependInfo.cmake"
   "CMakeFiles/net.dir/DependInfo.cmake"
+  "CMakeFiles/SyncedMemory.dir/DependInfo.cmake"
+  "CMakeFiles/shared_ptr.dir/DependInfo.cmake"
   )

@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/wyl/CLionProjects/CXXbasic/net.hpp -I/home/wyl/CLionProjects/CXXbasic/Blob.hpp 
+CXX_INCLUDES = -I/home/wyl/CLionProjects/CXXcaffe/net.hpp -I/home/wyl/CLionProjects/CXXcaffe/Blob.hpp -I/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp 
 

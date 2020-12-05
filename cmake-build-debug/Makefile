@@ -68,10 +68,10 @@ RM = /home/wyl/clion-2020.2.4/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wyl/CLionProjects/CXXbasic
+CMAKE_SOURCE_DIR = /home/wyl/CLionProjects/CXXcaffe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wyl/CLionProjects/CXXbasic/cmake-build-debug
+CMAKE_BINARY_DIR = /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles /home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -156,6 +156,32 @@ net/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/build
 .PHONY : net/fast
 
+#=============================================================================
+# Target rules for targets named SyncedMemory
+
+# Build rule for target.
+SyncedMemory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SyncedMemory
+.PHONY : SyncedMemory
+
+# fast build rule for target.
+SyncedMemory/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SyncedMemory.dir/build.make CMakeFiles/SyncedMemory.dir/build
+.PHONY : SyncedMemory/fast
+
+#=============================================================================
+# Target rules for targets named shared_ptr
+
+# Build rule for target.
+shared_ptr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shared_ptr
+.PHONY : shared_ptr
+
+# fast build rule for target.
+shared_ptr/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/build
+.PHONY : shared_ptr/fast
+
 Blob.o: Blob.cpp.o
 
 .PHONY : Blob.o
@@ -182,6 +208,33 @@ Blob.s: Blob.cpp.s
 Blob.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Blob.dir/build.make CMakeFiles/Blob.dir/Blob.cpp.s
 .PHONY : Blob.cpp.s
+
+SyncedMemory.o: SyncedMemory.cpp.o
+
+.PHONY : SyncedMemory.o
+
+# target to build an object file
+SyncedMemory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SyncedMemory.dir/build.make CMakeFiles/SyncedMemory.dir/SyncedMemory.cpp.o
+.PHONY : SyncedMemory.cpp.o
+
+SyncedMemory.i: SyncedMemory.cpp.i
+
+.PHONY : SyncedMemory.i
+
+# target to preprocess a source file
+SyncedMemory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SyncedMemory.dir/build.make CMakeFiles/SyncedMemory.dir/SyncedMemory.cpp.i
+.PHONY : SyncedMemory.cpp.i
+
+SyncedMemory.s: SyncedMemory.cpp.s
+
+.PHONY : SyncedMemory.s
+
+# target to generate assembly for a file
+SyncedMemory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SyncedMemory.dir/build.make CMakeFiles/SyncedMemory.dir/SyncedMemory.cpp.s
+.PHONY : SyncedMemory.cpp.s
 
 net.o: net.cpp.o
 
@@ -210,6 +263,33 @@ net.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/net.cpp.s
 .PHONY : net.cpp.s
 
+shared_ptr.o: shared_ptr.cpp.o
+
+.PHONY : shared_ptr.o
+
+# target to build an object file
+shared_ptr.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/shared_ptr.cpp.o
+.PHONY : shared_ptr.cpp.o
+
+shared_ptr.i: shared_ptr.cpp.i
+
+.PHONY : shared_ptr.i
+
+# target to preprocess a source file
+shared_ptr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/shared_ptr.cpp.i
+.PHONY : shared_ptr.cpp.i
+
+shared_ptr.s: shared_ptr.cpp.s
+
+.PHONY : shared_ptr.s
+
+# target to generate assembly for a file
+shared_ptr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/shared_ptr.cpp.s
+.PHONY : shared_ptr.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,13 +299,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Blob"
+	@echo "... SyncedMemory"
 	@echo "... net"
+	@echo "... shared_ptr"
 	@echo "... Blob.o"
 	@echo "... Blob.i"
 	@echo "... Blob.s"
+	@echo "... SyncedMemory.o"
+	@echo "... SyncedMemory.i"
+	@echo "... SyncedMemory.s"
 	@echo "... net.o"
 	@echo "... net.i"
 	@echo "... net.s"
+	@echo "... shared_ptr.o"
+	@echo "... shared_ptr.i"
+	@echo "... shared_ptr.s"
 .PHONY : help
 
 

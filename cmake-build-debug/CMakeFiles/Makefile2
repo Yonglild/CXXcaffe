@@ -64,10 +64,10 @@ RM = /home/wyl/clion-2020.2.4/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wyl/CLionProjects/CXXbasic
+CMAKE_SOURCE_DIR = /home/wyl/CLionProjects/CXXcaffe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wyl/CLionProjects/CXXbasic/cmake-build-debug
+CMAKE_BINARY_DIR = /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -75,6 +75,8 @@ CMAKE_BINARY_DIR = /home/wyl/CLionProjects/CXXbasic/cmake-build-debug
 # The main recursive "all" target.
 all: CMakeFiles/Blob.dir/all
 all: CMakeFiles/net.dir/all
+all: CMakeFiles/SyncedMemory.dir/all
+all: CMakeFiles/shared_ptr.dir/all
 
 .PHONY : all
 
@@ -86,6 +88,8 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/Blob.dir/clean
 clean: CMakeFiles/net.dir/clean
+clean: CMakeFiles/SyncedMemory.dir/clean
+clean: CMakeFiles/shared_ptr.dir/clean
 
 .PHONY : clean
 
@@ -96,14 +100,14 @@ clean: CMakeFiles/net.dir/clean
 CMakeFiles/Blob.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Blob.dir/build.make CMakeFiles/Blob.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Blob.dir/build.make CMakeFiles/Blob.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Blob"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Blob"
 .PHONY : CMakeFiles/Blob.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Blob.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Blob.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Blob.dir/rule
 
 # Convenience name for target.
@@ -123,14 +127,14 @@ CMakeFiles/Blob.dir/clean:
 CMakeFiles/net.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target net"
 .PHONY : CMakeFiles/net.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/net.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/net.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/net.dir/rule
 
 # Convenience name for target.
@@ -142,6 +146,60 @@ net: CMakeFiles/net.dir/rule
 CMakeFiles/net.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/clean
 .PHONY : CMakeFiles/net.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/SyncedMemory.dir
+
+# All Build rule for target.
+CMakeFiles/SyncedMemory.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SyncedMemory.dir/build.make CMakeFiles/SyncedMemory.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SyncedMemory.dir/build.make CMakeFiles/SyncedMemory.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target SyncedMemory"
+.PHONY : CMakeFiles/SyncedMemory.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/SyncedMemory.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SyncedMemory.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/SyncedMemory.dir/rule
+
+# Convenience name for target.
+SyncedMemory: CMakeFiles/SyncedMemory.dir/rule
+
+.PHONY : SyncedMemory
+
+# clean rule for target.
+CMakeFiles/SyncedMemory.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SyncedMemory.dir/build.make CMakeFiles/SyncedMemory.dir/clean
+.PHONY : CMakeFiles/SyncedMemory.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/shared_ptr.dir
+
+# All Build rule for target.
+CMakeFiles/shared_ptr.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target shared_ptr"
+.PHONY : CMakeFiles/shared_ptr.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/shared_ptr.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/shared_ptr.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/shared_ptr.dir/rule
+
+# Convenience name for target.
+shared_ptr: CMakeFiles/shared_ptr.dir/rule
+
+.PHONY : shared_ptr
+
+# clean rule for target.
+CMakeFiles/shared_ptr.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/clean
+.PHONY : CMakeFiles/shared_ptr.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

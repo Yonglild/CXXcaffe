@@ -1,4 +1,6 @@
-/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/Blob.dir
-/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/wyl/CLionProjects/CXXbasic/cmake-build-debug/CMakeFiles/net.dir
+/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/Blob.dir
+/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/net.dir
+/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/SyncedMemory.dir
+/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/shared_ptr.dir

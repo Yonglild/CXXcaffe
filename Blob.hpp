@@ -7,6 +7,8 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <memory>
+#include "SyncedMemory.hpp"
 using namespace std;
 
 const int kMaxBlobAxes = 32;
@@ -39,8 +41,11 @@ namespace caffe{
 
     protected:
         shared_ptr<SyncedMemory> shape_data_;       // SyncedMemory为CPU和GPU共用内存
+        shared_ptr<SyncedMemory> data_;       // SyncedMemory为CPU和GPU共用内存
+        shared_ptr<SyncedMemory> diff_;       // SyncedMemory为CPU和GPU共用内存
         vector<int> shape_;
         int count_;
+        int capacity_;
     };
 }
 
