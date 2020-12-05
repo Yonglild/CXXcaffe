@@ -17,172 +17,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Blob">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Blob/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="net">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/net" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 net"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="net/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/net" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 net/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="SyncedMemory">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/SyncedMemory" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 SyncedMemory"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="SyncedMemory/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/SyncedMemory" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
-					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 SyncedMemory/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
 				<Option type="4"/>
@@ -240,6 +74,172 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SyncedMemory">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/SyncedMemory" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 SyncedMemory"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SyncedMemory/fast">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/SyncedMemory" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 SyncedMemory/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="net">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/net" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 net"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="net/fast">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/net" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 net/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Blob">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Blob/fast">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/net.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/Blob.hpp"/>
+					<Add directory="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.hpp"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
