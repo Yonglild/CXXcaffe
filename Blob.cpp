@@ -19,8 +19,9 @@ namespace caffe{
     void Blob<Dtype>::Reshape(const vector<int> &shape) {
         count_ = 1;
         shape_.resize(shape.size());
+        //shape vector<int>也可以放在gpu上
         if(!shape_data_ || shape_data_->size() < shape.size() * sizeof(int)){
-            shape_data_.reset(new SyncedMemory(shape.size() * sizeof(int)));
+            shape_data_.reset(new SyncedMemory(shape.size() * sizeof(int)));    // shape_data_智能指针指向刚生成的新的对象, 原先对象引用次数减1
         }
         int* shape_data = static_cast<int*>(shape_data_->mutable_cpu_data());
         for(int i=0; i < shape.size(); i++){
@@ -28,12 +29,88 @@ namespace caffe{
             shape_[i] = shape[i];
             shape_data[i] = shape[i];
         }
+        // data_和diff_重置指向新的对象
         if(count_ > capacity_){
             capacity_ = count_;
             data_.reset(new SyncedMemory(capacity_ * sizeof(Dtype)));
             diff_.reset(new SyncedMemory(capacity_ * sizeof(Dtype)));
         }
     }
+
+    template <typename Dtype>
+    void Blob<Dtype>::Reshape(const caffe::Blob<Dtype> &other) {
+        Reshape(other.shape());
+    }
+
+    template <typename Dtype>
+    const Dtype* Blob<Dtype>::cpu_data() const {
+        return (const Dtype*) data_->cpu_data();
+    }
+
+
+    template <typename Dtype>
+    const Dtype* Blob<Dtype>::cpu_diff() const {
+        return (const Dtype*) diff_->cpu_data();
+    }
+
+    template <typename Dtype>
+    const Dtype* Blob<Dtype>::gpu_diff() const {
+        return (const Dtype*) diff_->gpu_data();
+    }
+    /**
+     * @brief 如果传入的数据与原数据尺寸不一致，reset；如果一致，释放掉原先数据的内存，再指向新数据
+     * @tparam Dtype
+     * @param data
+     */
+    template <typename Dtype>
+    void Blob<Dtype>::set_cpu_data(Dtype* data) {
+        CHECK(data);
+        size_t size = count_ * sizeof(Dtype);
+        if(size != data_->size()){
+            data_.reset(new SyncedMemory(size));
+            diff_.reset(new SyncedMemory(size));
+        }
+        data_->set_cpu_data(data);
+    }
+
+    template <typename Dtype>
+    void Blob<Dtype>::set_gpu_data(Dtype *data) {
+        CHECK(data);
+        size_t size = count_ * sizeof(Dtype);
+        if(size!=data_->size()){
+            data_.reset(new SyncedMemory(size));
+            diff_.reset(new SyncedMemory(size));
+        }
+        data_->set_gpu_data(data);
+    }
+
+    /**]
+     * @brief 取出cpu_ptr_
+     * @tparam Dtype
+     * @return static_cast强制类型转换
+     */
+    template <typename Dtype>
+    Dtype* Blob<Dtype>::mutable_cpu_data() {
+        return static_cast<Dtype*>(data_->mutable_cpu_data());
+    }
+
+    template <typename Dtype>
+    Dtype* Blob<Dtype>::mutable_gpu_data() {
+        return static_cast<Dtype*>(data_->mutable_gpu_data());
+    }
+
+    template <typename Dtype>
+    Dtype* Blob<Dtype>::mutable_cpu_diff() {
+        return static_cast<Dtype*>(diff_->mutable_cpu_data());
+    }
+
+    template <typename Dtype>
+    Dtype* Blob<Dtype>::mutable_gpu_diff() {
+        return static_cast<Dtype*>(diff_->mutable_cpu_data());
+    }
+
+    template <> void Blob<unsigned int>::Update() {NOT_IMPLEMENTED;}
+    template <> void Blob<int>::Update() {NOT_IMPLEMENTED;}
 
 
 }

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(cxxbasic)
-
+set(CMAKE_CXX_STANDARD 11)      # 必须加上，否则shared_ptr不能编译通过
 include_directories(net.hpp Blob.hpp SyncedMemory.hpp)
 add_executable(net net.cpp)
 add_executable(Blob Blob.cpp)
