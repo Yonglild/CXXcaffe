@@ -159,6 +159,7 @@ namespace caffe{
 
         const Dtype* cpu_data() const;      // 返回SyncedMemory类型中的cpu_ptr_
         void set_cpu_data(Dtype* data);     // 将data赋给blob中的data_
+        const Dtype* gpu_data() const;
         void set_gpu_data(Dtype* data);
         const Dtype* cpu_diff() const;
 
@@ -168,7 +169,10 @@ namespace caffe{
         Dtype* mutable_gpu_diff();
 
         void Update();
-
+        Dtype* asum_data() const;
+        void ShareData(const Blob& other);
+        void FromProto(const BlobProto& proto, bool reshape = true);
+        void ToProto(BlobProto* proto, bool write_diff = false) const;
 
     protected:
         //Blob中有三种数据需要GPU和CPU同步

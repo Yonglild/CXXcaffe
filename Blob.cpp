@@ -47,6 +47,11 @@ namespace caffe{
         return (const Dtype*) data_->cpu_data();
     }
 
+    template <typename Dtype>
+    const Dtype* Blob<Dtype>::gpu_data() const {
+        CHECK(data_);
+        return (const Dtype*) data_->gpu_data();
+    }
 
     template <typename Dtype>
     const Dtype* Blob<Dtype>::cpu_diff() const {
@@ -111,6 +116,72 @@ namespace caffe{
 
     template <> void Blob<unsigned int>::Update() {NOT_IMPLEMENTED;}
     template <> void Blob<int>::Update() {NOT_IMPLEMENTED;}
+
+    template <typename Dtype>
+    void Blob<Dtype>::Update(){
+        switch (data_->head()){
+            case SyncedMemory::HEAD_AT_CPU:
+                caffe_axpy<Dtype>(count_, Dtype(-1),
+                                  static_cast<Dtype>(diff_->cpu_data()),
+                                  static_cast<Dtype>(data_->mutable_cpu_data())
+                                  );
+                break;
+
+            case SyncedMemory::HEAD_AT_GPU:
+            case SyncedMemory::SYNCED:
+#ifndef CPU_ONLY
+                check_device();
+                caffe_gpu_axpy<Dtype>(count_, Dtype(-1),
+                                      static_cast<Dtype>(diff_->gpu_data()),
+                                      static_cast<Dtype>(data_->mutable_gpu_data())
+                                      );
+#else
+                NO_GPU;
+#endif
+                break;
+            default:
+                LOG(FATAL) << "Syncedmem not initialized.";
+        }
+    }
+
+    template <> unsigned int Blob<unsigned int>::asum_data() const{
+        NOT_IMPLEMENTED;
+        return 0;
+    }
+
+    template <> int Blob<int>::asum_data() const{
+        NOT_IMPLEMENTED;
+        return 0;
+    }
+
+    template <typename Dtype>
+    Dtype Blob<Dtype>::asum_data() const {
+        switch(data_->head()){
+            case SyncedMemory::HEAD_AT_CPU:
+                return caffe_cpu_asum(count_, cpu_data());
+                break;
+            case SyncedMemory::HEAD_AT_GPU:
+            case SyncedMemory::SYNCED:
+#ifndef CPU_ONLY
+    Dtype asum;
+    caffe_gpu_asum(count_, gpu_data(), &asum);
+    return asum;
+#else
+    NO_GPU;
+#endif
+            case SyncedMemory::UNINITIALIZED:
+                return 0;
+            default:
+                LOG(FATAL) << "Unknown SyncedMemory head state: " << data_->head();
+        }
+        return 0;
+    }
+
+
+
+
+
+
 
 
 }
