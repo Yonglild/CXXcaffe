@@ -171,6 +171,7 @@ namespace caffe{
         void Update();
         Dtype* asum_data() const;
         void ShareData(const Blob& other);
+        void ShareDiff(const Blob& other);
         void FromProto(const BlobProto& proto, bool reshape = true);
         void ToProto(BlobProto* proto, bool write_diff = false) const;
 

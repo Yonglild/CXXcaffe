@@ -177,11 +177,108 @@ namespace caffe{
         return 0;
     }
 
+    template <typename Dtype>
+    void Blob<Dtype>::ShareData(const Blob<Dtype> &other) {
+        data_ = other.data();
+    }
 
+    template <typename Dtype>
+    void Blob<Dtype>::ShareDiff(const Blob<Dtype> &other) {
+        diff_ = other.data();
+    }
 
+    template <typename Dtype>
+    void Blob<Dtype>::FromProto(const BlobProto& proto, bool reshape) {
+        if (reshape) {
+            vector<int> shape;
+            if (proto.has_num() || proto.has_channels() ||
+                proto.has_height() || proto.has_width()) {
+                // Using deprecated 4D Blob dimensions --
+                // shape is (num, channels, height, width).
+                shape.resize(4);
+                shape[0] = proto.num();
+                shape[1] = proto.channels();
+                shape[2] = proto.height();
+                shape[3] = proto.width();
+            } else {
+                shape.resize(proto.shape().dim_size());
+                for (int i = 0; i < proto.shape().dim_size(); ++i) {
+                    shape[i] = proto.shape().dim(i);
+                }
+            }
+            Reshape(shape);
+        } else {
+            CHECK(ShapeEquals(proto)) << "shape mismatch (reshape not set)";
+        }
+        // copy data
+        Dtype* data_vec = mutable_cpu_data();
+        if (proto.double_data_size() > 0) {
+            CHECK_EQ(count_, proto.double_data_size());
+            for (int i = 0; i < count_; ++i) {
+                data_vec[i] = proto.double_data(i);
+            }
+        } else {
+            CHECK_EQ(count_, proto.data_size());
+            for (int i = 0; i < count_; ++i) {
+                data_vec[i] = proto.data(i);
+            }
+        }
+        if (proto.double_diff_size() > 0) {
+            CHECK_EQ(count_, proto.double_diff_size());
+            Dtype* diff_vec = mutable_cpu_diff();
+            for (int i = 0; i < count_; ++i) {
+                diff_vec[i] = proto.double_diff(i);
+            }
+        } else if (proto.diff_size() > 0) {
+            CHECK_EQ(count_, proto.diff_size());
+            Dtype* diff_vec = mutable_cpu_diff();
+            for (int i = 0; i < count_; ++i) {
+                diff_vec[i] = proto.diff(i);
+            }
+        }
+    }
 
+    template <>
+    void Blob<double>::ToProto(BlobProto* proto, bool write_diff) const {
+        proto->clear_shape();
+        for (int i = 0; i < shape_.size(); ++i) {
+            proto->mutable_shape()->add_dim(shape_[i]);
+        }
+        proto->clear_double_data();
+        proto->clear_double_diff();
+        const double* data_vec = cpu_data();
+        for (int i = 0; i < count_; ++i) {
+            proto->add_double_data(data_vec[i]);
+        }
+        if (write_diff) {
+            const double* diff_vec = cpu_diff();
+            for (int i = 0; i < count_; ++i) {
+                proto->add_double_diff(diff_vec[i]);
+            }
+        }
+    }
 
+    template <>
+    void Blob<float>::ToProto(BlobProto* proto, bool write_diff) const {
+        proto->clear_shape();
+        for (int i = 0; i < shape_.size(); ++i) {
+            proto->mutable_shape()->add_dim(shape_[i]);
+        }
+        proto->clear_data();
+        proto->clear_diff();
+        const float* data_vec = cpu_data();
+        for (int i = 0; i < count_; ++i) {
+            proto->add_data(data_vec[i]);
+        }
+        if (write_diff) {
+            const float* diff_vec = cpu_diff();
+            for (int i = 0; i < count_; ++i) {
+                proto->add_diff(diff_vec[i]);
+            }
+        }
+    }
 
-
-
+    INSTANTIATE_CLASS(Blob);
+    template class Blob<int>;
+    template class Blob<unsigned int>;
 }
