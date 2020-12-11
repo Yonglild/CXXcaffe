@@ -2,7 +2,7 @@
 // Created by wyl on 2020/11/28.
 //
 // https://www.cnblogs.com/shine-lee/p/10050067.html
-#include "SyncedMemory.hpp"
+#include "include/SyncedMemory.hpp"
 namespace caffe {
     SyncedMemory::SyncedMemory()
     :cpu_ptr_(NULL), gpu_ptr_(NULL), size_(0), head_(UNINITIALIZED),

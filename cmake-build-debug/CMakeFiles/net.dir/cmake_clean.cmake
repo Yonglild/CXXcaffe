@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/net.dir/net.cpp.o"
-  "net.pdb"
   "net"
+  "net.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
