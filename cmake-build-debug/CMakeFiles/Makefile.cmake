@@ -48,8 +48,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/shared_ptr.dir/DependInfo.cmake"
+  "CMakeFiles/layer.dir/DependInfo.cmake"
   "CMakeFiles/Blob.dir/DependInfo.cmake"
   "CMakeFiles/net.dir/DependInfo.cmake"
   "CMakeFiles/SyncedMemory.dir/DependInfo.cmake"
-  "CMakeFiles/shared_ptr.dir/DependInfo.cmake"
   )

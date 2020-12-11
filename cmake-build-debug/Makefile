@@ -131,6 +131,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named shared_ptr
+
+# Build rule for target.
+shared_ptr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shared_ptr
+.PHONY : shared_ptr
+
+# fast build rule for target.
+shared_ptr/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/build
+.PHONY : shared_ptr/fast
+
+#=============================================================================
+# Target rules for targets named layer
+
+# Build rule for target.
+layer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 layer
+.PHONY : layer
+
+# fast build rule for target.
+layer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/build
+.PHONY : layer/fast
+
+#=============================================================================
 # Target rules for targets named Blob
 
 # Build rule for target.
@@ -168,19 +194,6 @@ SyncedMemory: cmake_check_build_system
 SyncedMemory/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SyncedMemory.dir/build.make CMakeFiles/SyncedMemory.dir/build
 .PHONY : SyncedMemory/fast
-
-#=============================================================================
-# Target rules for targets named shared_ptr
-
-# Build rule for target.
-shared_ptr: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shared_ptr
-.PHONY : shared_ptr
-
-# fast build rule for target.
-shared_ptr/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/build
-.PHONY : shared_ptr/fast
 
 Blob.o: Blob.cpp.o
 
@@ -235,6 +248,33 @@ SyncedMemory.s: SyncedMemory.cpp.s
 SyncedMemory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SyncedMemory.dir/build.make CMakeFiles/SyncedMemory.dir/SyncedMemory.cpp.s
 .PHONY : SyncedMemory.cpp.s
+
+layer.o: layer.cpp.o
+
+.PHONY : layer.o
+
+# target to build an object file
+layer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/layer.cpp.o
+.PHONY : layer.cpp.o
+
+layer.i: layer.cpp.i
+
+.PHONY : layer.i
+
+# target to preprocess a source file
+layer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/layer.cpp.i
+.PHONY : layer.cpp.i
+
+layer.s: layer.cpp.s
+
+.PHONY : layer.s
+
+# target to generate assembly for a file
+layer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/layer.cpp.s
+.PHONY : layer.cpp.s
 
 net.o: net.cpp.o
 
@@ -300,6 +340,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Blob"
 	@echo "... SyncedMemory"
+	@echo "... layer"
 	@echo "... net"
 	@echo "... shared_ptr"
 	@echo "... Blob.o"
@@ -308,6 +349,9 @@ help:
 	@echo "... SyncedMemory.o"
 	@echo "... SyncedMemory.i"
 	@echo "... SyncedMemory.s"
+	@echo "... layer.o"
+	@echo "... layer.i"
+	@echo "... layer.s"
 	@echo "... net.o"
 	@echo "... net.i"
 	@echo "... net.s"
