@@ -63,7 +63,15 @@ namespace caffe {
 
         void SharedWeights();
 
+        int AppendBottom(const NetParameter& param, const int layer_id, const int bottom_id, set<string>* available_blobs, map<string, int>* blob_name_to_idx);
+    protected:
+        Phase phase_;
+        vector<vector<Blob<Dtype>*>> bottom_vecs_;
+        vector<vector<int>> bottom_id_vecs_;
+        vector<vector<bool>> bottom_need_backward_;
 
+        vector<vector<Blob<Dtype>*>> top_vecs_;
+        vector<vector<int>> top_id_vecs_;
     };
 }
 

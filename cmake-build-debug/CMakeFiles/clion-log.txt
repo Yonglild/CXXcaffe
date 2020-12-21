@@ -1,4 +1,29 @@
-/home/wyl/clion-2020.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/wyl/CLionProjects/CXXcaffe
+/home/wyl/clion-2020.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/wyl/CLionProjects/CXXcaffe
 -- Configuring done
--- Generating done
--- Build files have been written to: /home/wyl/CLionProjects/CXXcaffe/cmake-build-debug
+CMake Error at CMakeLists.txt:15 (add_executable):
+  Cannot find source file:
+
+    protobuf_write.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:14 (add_executable):
+  Cannot find source file:
+
+    protobuf_read.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
+  .hpp .hxx .in .txx
+
+
+CMake Error at CMakeLists.txt:15 (add_executable):
+  No SOURCES given to target: pb_write
+
+
+CMake Error at CMakeLists.txt:14 (add_executable):
+  No SOURCES given to target: pb_read
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

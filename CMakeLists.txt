@@ -10,3 +10,6 @@ add_executable(Blob Blob.cpp)
 add_executable(SyncedMemory SyncedMemory.cpp)
 add_executable(layer layer.cpp)
 add_executable(shared_ptr shared_ptr.cpp)
+
+add_executable(pb_read protobuf_read.cpp)
+add_executable(pb_write protobuf_write.cpp)

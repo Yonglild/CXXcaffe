@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "Blob"
-  "Blob.pdb"
   "CMakeFiles/Blob.dir/Blob.cpp.o"
+  "Blob.pdb"
+  "Blob"
 )
 
 # Per-language clean rules from dependency scanning.
