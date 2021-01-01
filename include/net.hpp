@@ -86,7 +86,15 @@ namespace caffe {
         vector<Blob<Dtype>*> net_input_blobs_;
         vector<Blob<Dtype>*> net_output_blobs_;
 
+        vector<Dtype> blob_loss_weights_;   // 存储第top_id个blob的loss
+        size_t memory_used_;                // 网络总的内存占有
+
+        vector<bool> layer_need_backward_;  // net中各层是否需要反向传播
+        vector<bool> blob_need_backward_;  // net中各层中top blob是否反向传播
+
+        vector<string> blob_names_;         // ???
     };
+
 }
 
 #endif  //CXXBASIC_NET_H

@@ -84,6 +84,7 @@ namespace caffe{
             return count;
         }
 
+        //
         inline int count(int start_axis) const{
             return count(start_axis, num_axes());
         }

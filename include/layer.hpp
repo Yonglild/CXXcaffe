@@ -54,6 +54,10 @@ namespace caffe{
             return layer_param_;
         }
 
+        // 获取第top_index个blob的loss
+        inline Dtype loss(const int top_index) const {
+            return (loss_.size()>top_index)?loss_[top_index]:Dtype(0);
+        }
 
 
     protected:
