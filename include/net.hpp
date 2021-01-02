@@ -77,8 +77,6 @@ namespace caffe {
         vector<vector<Blob<Dtype>*>> top_vecs_;
         vector<vector<int>> top_id_vecs_;
 
-        vector<shared_ptr<Layer<Dtype>>> layers_;
-        vector<string> layer_names_;
         vector<bool> blob_need_backward_;
         vector<shared_ptr<Blob<Dtype>>> blobs_;
         vector<int> net_input_blob_indices_;
@@ -89,10 +87,16 @@ namespace caffe {
         vector<Dtype> blob_loss_weights_;   // 存储第top_id个blob的loss
         size_t memory_used_;                // 网络总的内存占有
 
+        vector<shared_ptr<Layer<Dtype>>> layers_;
+        vector<string> layer_names_;
+        map<string, int> layer_names_index_;
         vector<bool> layer_need_backward_;  // net中各层是否需要反向传播
+
+        vector<shared_ptr<Blob<Dtype>>> blobs_;
+        vector<string> blob_names_;         // ???
+        map<string, int> blob_names_index_;
         vector<bool> blob_need_backward_;  // net中各层中top blob是否反向传播
 
-        vector<string> blob_names_;         // ???
     };
 
 }

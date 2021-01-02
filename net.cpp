@@ -169,6 +169,7 @@ void Net<Dtype>::Init(const NetParameter &in_param) {
     for(int layer_id = layers_.size(); layer_id>=0; layer_id--){
         bool layer_contributes_loss = false;
         bool layer_skip_propagate_down = true;
+        // 输出blobs是否对loss有贡献 来判断layer是否需要反传
         for(int top_id=0; top_id < top_vecs_[layer_id].size(); top_id++){
             // blob_names_整个网络中，所有非参数blob的name
             const string& blob_name = blob_names_[top_id_vecs_[layer_id][top_id]];
@@ -178,7 +179,7 @@ void Net<Dtype>::Init(const NetParameter &in_param) {
             if(blobs_skip_backcp.find(blob_name) == blobs_skip_backcp.end()){
                 layer_skip_propagate_down = false;
             }
-            // ？？？？？？？
+            // 该层对loss有贡献且该层不跳过反向传播
             if(layer_contributes_loss && !layer_skip_propagate_down)
                 break;
         }
@@ -201,14 +202,109 @@ void Net<Dtype>::Init(const NetParameter &in_param) {
                           << " does not need backward computation.";
             }
         }
+        for(int bottom_id=0; bottom_id<bottom_vecs_[layer_id].size(); bottom_id++){
+            if(layer_contributes_loss){
+                const string& blob_name = blob_names_[bottom_id_vecs_[layer_id][bottom_id]];
+                blobs_under_loss.insert(blob_name);
+                //判断当前层是否contributions to loss 是的话 就把名字插入 blobs_under_loss中
+            }else{
+                bottom_need_backward_[layer_id][bottom_id] = false;
+            }
+            if(!bottom_need_backward_[layer_id][bottom_id]){
+                const string& blob_name = blob_names_[bottom_id_vecs_[layer_id][bottom_id]];
+                blobs_skip_backcp.insert(blob_name);
+                // 若本层不需要反向传播，将名字插入blobs_skip_backp中
+            }
+        }
     }
 
+    if(param.force_backward()){
+        for(int layer_id = 0; layer_id<layers_.size(); layer_id++){
+            layer_need_backward_[layer_id] = true;
+            for(int bottom_id = 0; bottom_id<bottom_need_backward_[layer_id].size(); ++bottom_id){
+                bottom_need_backward_[layer_id][bottom_id] = bottom_need_backward_[layer_id][bottom_id] ||
+                        layers_[layer_id]->AllowForceBackward(bottom_id);
+                blob_need_backward_[bottom_id_vecs_[layer_id][bottom_id]] =
+                        blob_need_backward_[bottom_id_vecs_[layer_id][bottom_id]] ||
+                        bottom_need_backward_[layer_id][bottom_id];
+            }
+            for(int param_id=0; param_id<layers_[layer_id]->blobs().size();
+            ++param_id){
+                layers_[layer_id]->set_param_propagate_down(param_id, true);
+            }
+        }
+    }
+
+    // In the end, all remaining blobs are considered output blobs.
+    // 最终，所有还在available_blobs中的blob都会被视为输出
+    for(set<string>::iteration it=available_blobs.begin();
+    it!=available_blobs.end(); it++){
+        LOG_IF(INFO, Caffe::root_solver())
+                << "This network produces output " << *it;
+        net_output_blobs_.push_back(blobs_[blob_name_to_idx[*it]].get());
+        net_output_blob_indices_.push_back(blob_name_to_idx[*it]);
+    }
+
+    for(size_t blob_id = 0; blob_id<blob_names_.size(); ++blob_id){
+        blob_names_index_[blob_names_[blob_id]] = blob_id;
+    }
+
+    for(size_t layer_id = 0; layer_id<layer_names_.size(); layer_id++){
+        layer_names_index_[layer_names_[layer_id]] = layer_id;
+    }
+
+    SharedWeights();
+    debug_info_ = param.debug_info();
+    LOG_IF(INFO, Caffe::root_solver()) << "Network initialization done.";
 }
 
+/**
+ * @tparam Dtype
+ * @param param
+ * @param layer_id
+ * @param bottom_id
+ * @param available_blobs
+ * @param blob_name_to_idx
+ */
+template <typename Dtype>
+void Net<Dtype>::AppendTop(const NetParameter &param, const int layer_id, const int bottom_id,
+                           set <string> *available_blobs, map<int> *blob_name_to_idx) {
+    
+}
+
+
+
+/**
+ * @tparam Dtype
+ * @param param
+ * @param layer_id
+ * @param bottom_id
+ * @param available_blobs
+ * @param blob_name_to_idx
+ * @return 返回blob_id
+ */
 template <typename Dtype>
 int Net<Dtype>::AppendBottom(const NetParameter &param, const int layer_id, const int bottom_id,
                              set <string> *available_blobs, map<string, int> *blob_name_to_idx) {
-
+    const LayerParameter& layer_param = param.layer(layer_id);
+    const string& blob_name = layer_param.bottom(bottom_id);
+    if(available_blobs->find(blob_name) == available_blobs->end()){
+        LOG(FATAL) << "Unknown bottom blob '" << blob_name << "' (layer '"
+                   << layer_param.name() << "', bottom index " << bottom_id << ")";
+    }
+    const int blob_id = (*blob_name_to_idx)[blob_name];
+    LOG_IF(INFO, Caffe::root_solver())
+            << layer_names_[layer_id] << " <- " << blob_name;
+    bottom_vecs_[layer_id].push_back(blobs_[blob_id].get());
+    bottom_id_vecs_[layer_id].push_back(blob_id);
+    available_blobs->erase(blob_name);
+    bool need_backward = blob_need_backward_[blob_id];
+    // Check if the backpropagation on bottom_id should be skipped
+    if (layer_param.propagate_down_size() > 0) {
+        need_backward = layer_param.propagate_down(bottom_id);
+    }
+    bottom_need_backward_[layer_id].push_back(need_backward);
+    return blob_id;
 }
 
 
