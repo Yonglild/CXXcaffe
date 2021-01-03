@@ -353,7 +353,7 @@ int Net<Dtype>::AppendBottom(const NetParameter &param, const int layer_id, cons
 
 template <typename Dtype>
 void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const int param_id) {
-    
+
 }
 
 };
