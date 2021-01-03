@@ -237,7 +237,7 @@ void Net<Dtype>::Init(const NetParameter &in_param) {
 
     // In the end, all remaining blobs are considered output blobs.
     // 最终，所有还在available_blobs中的blob都会被视为输出
-    for(set<string>::iteration it=available_blobs.begin();
+    for(set<string>::iterator it=available_blobs.begin();
     it!=available_blobs.end(); it++){
         LOG_IF(INFO, Caffe::root_solver())
                 << "This network produces output " << *it;
@@ -258,7 +258,9 @@ void Net<Dtype>::Init(const NetParameter &in_param) {
     LOG_IF(INFO, Caffe::root_solver()) << "Network initialization done.";
 }
 
-/**
+/**AppendTop函数会向整个net的blob列表（blobs_）中添加一个新blob，同时将本层新建的top blob指向该新增blob，
+ * 这样就把层的输出blob和blob列表(blobs_)关联起来了。AppendTop函数在新建blob时可能会采用同址计算（in-place computer），
+ * 所谓同址计算就是同一层的top blob和bottom blob复用。
  * @tparam Dtype
  * @param param
  * @param layer_id
@@ -267,14 +269,49 @@ void Net<Dtype>::Init(const NetParameter &in_param) {
  * @param blob_name_to_idx
  */
 template <typename Dtype>
-void Net<Dtype>::AppendTop(const NetParameter &param, const int layer_id, const int bottom_id,
-                           set <string> *available_blobs, map<int> *blob_name_to_idx) {
-    
+void Net<Dtype>::AppendTop(const NetParameter &param, const int layer_id, const int top_id,
+                           set <string> *available_blobs, map<string, int> *blob_name_to_idx) {
+    // ????????这种写法？？
+    // 需要熟悉protobuf的写法
+    shared_ptr<LayerParameter> layer_param(new LayerParameter(param.layer(layer_id)));
+    const string& blob_name = (layer_param->top_size() > top_id) ?
+            layer_param->top(top_id) : "(automatic)";
+
+
+    //同址计算:top blob使用和bottom blob相同的地址和id
+    //是否使用同址计算由prototxt中对top/bottom blob名字的定义决定
+    if(blob_name_to_idx && layer_param->bottom_size()>top_id &&
+    layer_param->bottom(top_id) == blob_name){
+        // In-place computation
+        LOG_IF(INFO, Caffe::root_solver())
+        << layer_param->name() << " -> " << blob_name << " (in-place)";
+        top_vecs_[layer_id].push_back(blobs_[(*blob_name_to_idx)[blob_name]].get());
+        top_id_vecs_[layer_id].push_back((*blob_name_to_idx)[blob_name]);
+    }else if(blob_name_to_idx && blob_name_to_idx->find(blob_name) != blob_name_to_idx->end()){
+        LOG(FATAL) << "Top blob '" << blob_name
+                   << "' produced by multiple sources.";
+    }else{
+        // 不需要同址计算，则要创建一个新blob
+        shared_ptr<Blob<Dtype>> blob_pointer(new Blob<Dtype>);
+        const int blob_id = blobs_.size();
+        blobs_.push_back(blob_pointer);
+        blob_names_.push_back(blob_name);
+        blob_need_backward_.push_back(false);
+        if(blob_name_to_idx){
+            (*blob_name_to_idx)[blob_name] = blob_id;
+        }
+        top_vecs_[layer_id].push_back(blob_pointer.get());
+        top_id_vecs_[layer_id].push_back(blob_id);
+    }
+    if(available_blobs){
+        available_blobs->insert(blob_name);
+    }
 }
 
 
-
-/**
+/**　往第layer_id层的bottom_id位置设置输入向量，则availabel_blobs删掉该向量；设置该向量是否反传(默认false);返回该向量在blobs_中的位置
+ * AppendBottom函数不会向blobs_新增blob了，只是简单的把新增的bottom blob和在AppendTop中已经增加的blobs_关联起来。
+经过上述两个函数的处理，前一层的top blob、当前层的bottom blob就通过blobs_关联起来了，整个net中所有的层级就连结到一起。
  * @tparam Dtype
  * @param param
  * @param layer_id
@@ -288,24 +325,35 @@ int Net<Dtype>::AppendBottom(const NetParameter &param, const int layer_id, cons
                              set <string> *available_blobs, map<string, int> *blob_name_to_idx) {
     const LayerParameter& layer_param = param.layer(layer_id);
     const string& blob_name = layer_param.bottom(bottom_id);
-    if(available_blobs->find(blob_name) == available_blobs->end()){
+    if (available_blobs->find(blob_name) == available_blobs->end()) {
         LOG(FATAL) << "Unknown bottom blob '" << blob_name << "' (layer '"
                    << layer_param.name() << "', bottom index " << bottom_id << ")";
     }
     const int blob_id = (*blob_name_to_idx)[blob_name];
+
     LOG_IF(INFO, Caffe::root_solver())
-            << layer_names_[layer_id] << " <- " << blob_name;
-    bottom_vecs_[layer_id].push_back(blobs_[blob_id].get());
-    bottom_id_vecs_[layer_id].push_back(blob_id);
-    available_blobs->erase(blob_name);
+    << layer_names_[layer_id] << " <- " << blob_name;
+
+    //新增一个blob的动作是在top中完成的, bottom中只是把当前层bottom和前一层
+    //top的地址连接起来(通过bottom/top指向相同的blobs_[id]/blob_id来连接)
+    top_vecs_[layer_id].push_back(blobs_[blob_id].get());
+    top_id_vecs_[layer_id].push_back(blob_id);
+    if(available_blobs){
+        available_blobs->erase(blob_name);  //
+    }
+
     bool need_backward = blob_need_backward_[blob_id];
-    // Check if the backpropagation on bottom_id should be skipped
-    if (layer_param.propagate_down_size() > 0) {
+        // Check if the backpropagation on bottom_id should be skipped
+    if(layer_param.propagate_down_size()>0){
         need_backward = layer_param.propagate_down(bottom_id);
     }
     bottom_need_backward_[layer_id].push_back(need_backward);
     return blob_id;
 }
 
+template <typename Dtype>
+void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const int param_id) {
+    
+}
 
 };

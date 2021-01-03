@@ -23,7 +23,7 @@ namespace caffe {
         virtual ~Net();
 
         void Init(const NetParameter &in_param);
-        void FilterNet()
+        void FilterNet();
         const vector<Blob<Dtype> *> &Forward(Dtype *loss = NULL);
 
         const vector<Blob<Dtype> *> &ForwardPrefilled(Dtype *loss = NULL) {
@@ -67,7 +67,8 @@ namespace caffe {
                 NetParameter* param_filtered);
     protected:
         int AppendBottom(const NetParameter& param, const int layer_id, const int bottom_id, set<string>* available_blobs, map<string, int>* blob_name_to_idx);
-        int AppendTop(const NetParameter& param, const int layer_id, const int bottom_id, set<string>* available_blobs, map<string, int>* blob_name_to_idx);
+        void AppendTop(const NetParameter& param, const int layer_id, const int top_id, set<string>* available_blobs, map<string, int>* blob_name_to_idx);
+        void AppenParam(const NetParameter& param, const int layer_id, const int param_id);
         Phase phase_;
         string name_;
         vector<vector<Blob<Dtype>*>> bottom_vecs_;
@@ -77,8 +78,6 @@ namespace caffe {
         vector<vector<Blob<Dtype>*>> top_vecs_;
         vector<vector<int>> top_id_vecs_;
 
-        vector<bool> blob_need_backward_;
-        vector<shared_ptr<Blob<Dtype>>> blobs_;
         vector<int> net_input_blob_indices_;
         vector<int> net_output_blob_indices_;
         vector<Blob<Dtype>*> net_input_blobs_;
@@ -97,6 +96,7 @@ namespace caffe {
         map<string, int> blob_names_index_;
         vector<bool> blob_need_backward_;  // net中各层中top blob是否反向传播
 
+        vector<int> param_id_vecs_;
     };
 
 }
