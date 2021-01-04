@@ -47,8 +47,10 @@ g++ -l
 ```
 
 ## 2021/01/03 Net
+https://www.cnblogs.com/xiangfeidemengzhu/p/7100440.html
 
-blobs_ 存储整个Net的blob智能指针
+blobs_ 存储整个Net的层之间中间计算结果（blob智能指针）
+（Layer中的blobs_ 存储该层的可学习参数）
 
 blob_id 就是在blobs_中的id
 
@@ -57,6 +59,7 @@ blob_names_ 就是blobs_中的name
 blob_need_backward_　就是blobs_中的是否反向传播，默认为false
 
 blob_name_to_idx 存储整个blobs_的blob_id和name
+
 
 ```cpp
   const string& blob_name = layer_param.bottom(bottom_id);　// 通过bottom获取blob_name
@@ -67,3 +70,8 @@ blob_name_to_idx 存储整个blobs_的blob_id和name
 ```
 往第layer_id层的bottom_id位置设置输入向量，则availabel_blobs删掉该向量；设置该向量是否反传(默认false);返回该向量在blobs_中的位置
 ```
+**AppenParam**
+params_ 存储整个Net的参数，其中包括各Layer中的blobs_
+layer_id, param_id
+param_id_vecs_ 存储各层param的id
+param_layer_indices_ 存储

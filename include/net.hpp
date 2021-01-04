@@ -96,7 +96,10 @@ namespace caffe {
         map<string, int> blob_names_index_;
         vector<bool> blob_need_backward_;  // net中各层中top blob是否反向传播
 
-        vector<int> param_id_vecs_;
+        vector<shared_ptr<Blob<Dtype>>> params_;
+        vector<vector<int>> param_id_vecs_;
+        vector<string> param_display_names_;
+        vector<pair<int, int>> param_layer_indices_;
     };
 
 }

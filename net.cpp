@@ -351,8 +351,41 @@ int Net<Dtype>::AppendBottom(const NetParameter &param, const int layer_id, cons
     return blob_id;
 }
 
+/**
+ * @tparam Dtype
+ * @param param
+ * @param layer_id
+ * @param param_id 第layer_id层第param_id个参数
+ */
 template <typename Dtype>
 void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const int param_id) {
+    const LayerParameter& layer_param = layers_[layer_id]->layer_param();
+    const int param_size = layer_param.param_size();
+    string param_name = (param_size>param_id)?
+            layer_param.param(param_id),name():"";
+    if(param_name.size()){
+        param_display_names_.push_back(param_name);
+    }else{  // 如果字符串长度为0
+        ostringstream param_display_name;
+        param_display_name << param_name;
+        param_display_names_.push_back(param_name.str());
+    }
+    const int net_param_id = params_.size();
+        //layers_[layer_id]->blobs()中存放的是可学习参数(权重/偏置);
+        // 一个层一般有两个blob,第一个存weight,第二个存bias
+    params_.push_back(layers_[layer_id]->blobs()[param_id]);
+    param_id_vecs_[layer_id].push_back(net_param_id);
+    param_layer_indices_.push_back(make_pair(layer_id, param_id));
+
+    // 创建新的参数
+    ParamSpec default_param_spec;
+    const ParamSpec* param_spec = (layer_param.param_size()>param_id)?
+            &layer_param.param(param_id):&default_param_spec;
+
+
+
+
+
 
 }
 
