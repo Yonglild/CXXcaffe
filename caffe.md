@@ -71,7 +71,7 @@ blob_name_to_idx 存储整个blobs_的blob_id和name
 往第layer_id层的bottom_id位置设置输入向量，则availabel_blobs删掉该向量；设置该向量是否反传(默认false);返回该向量在blobs_中的位置
 ```
 **AppenParam**
-params_ 存储整个Net的参数，其中包括各Layer中的blobs_
-layer_id, param_id
-param_id_vecs_ 存储各层param的id
-param_layer_indices_ 存储
+        vector<shared_ptr<Blob<Dtype>>> params_;存储整个Net的参数，其中包括各Layer中的blobs_
+        vector<vector<int>> param_id_vecs_;     存储各层param的id，id指在params_中的位置
+        vector<string> param_display_names_;
+        vector<pair<int, int>> param_layer_indices_; 将layer_id, param_id打包
