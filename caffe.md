@@ -72,6 +72,6 @@ blob_name_to_idx 存储整个blobs_的blob_id和name
 ```
 **AppenParam**
         vector<shared_ptr<Blob<Dtype>>> params_;存储整个Net的参数，其中包括各Layer中的blobs_
-        vector<vector<int>> param_id_vecs_;     存储各层param的id，id指在params_中的位置
+        vector<vector<int>> param_id_vecs_;     存储各层param的id，id指在整个网络params_中的位置
         vector<string> param_display_names_;
-        vector<pair<int, int>> param_layer_indices_; 将layer_id, param_id打包
+        vector<pair<int, int>> param_layer_indices_; 将layer_id, param_id打包。这里param_id指在某一层中的参数位置

@@ -100,6 +100,15 @@ namespace caffe {
         vector<vector<int>> param_id_vecs_;
         vector<string> param_display_names_;
         vector<pair<int, int>> param_layer_indices_;
+        map<string, int> param_names_index_;
+
+        vector<int> param_owners_;
+        vector<Blob<Dtype>*> learnable_params_;
+        vector<int> learnable_param_ids_;
+        vector<float> params_lr_;
+        vector<bool> has_params_lr_;
+        vector<float> params_weight_decay_;
+        vector<bool> has_params_decay_;
     };
 
 }

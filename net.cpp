@@ -361,8 +361,11 @@ template <typename Dtype>
 void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const int param_id) {
     const LayerParameter& layer_param = layers_[layer_id]->layer_param();
     const int param_size = layer_param.param_size();
+    // 如果param_name找不到，？？？？？
     string param_name = (param_size>param_id)?
-            layer_param.param(param_id),name():"";
+            layer_param.param(param_id).name():"";
+    //vector<string> param_display_names_，这里param_name获取的
+    // 是PaParamSpec类型中的name成员，如果有name且非空,就把name压入该向量，否则就压入param_id
     if(param_name.size()){
         param_display_names_.push_back(param_name);
     }else{  // 如果字符串长度为0
@@ -371,8 +374,9 @@ void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const
         param_display_names_.push_back(param_name.str());
     }
     const int net_param_id = params_.size();
-        //layers_[layer_id]->blobs()中存放的是可学习参数(权重/偏置);
-        // 一个层一般有两个blob,第一个存weight,第二个存bias
+    //layers_[layer_id]->blobs()中存放的是可学习参数(权重/偏置);
+    // 一个层一般有两个blob,第一个存weight,第二个存bias
+    //param_id_vecs_,存储的基本元素是net_param_id，每遍历一个参数blob,net_param_id和param_id_vecs_都会更新
     params_.push_back(layers_[layer_id]->blobs()[param_id]);
     param_id_vecs_[layer_id].push_back(net_param_id);
     param_layer_indices_.push_back(make_pair(layer_id, param_id));
@@ -381,12 +385,75 @@ void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const
     ParamSpec default_param_spec;
     const ParamSpec* param_spec = (layer_param.param_size()>param_id)?
             &layer_param.param(param_id):&default_param_spec;
+    // 在caffe.proto的message ParamSpec里关于name的注释——>
+    // To share a parameter between two layers, give it a (non-empty) name,
+    // 可见，如果一个parameter是共享与多个网络层，那么它会有一个非空的name
+    if (!param_size || !param_name.size() || (param_name.size() &&
+    param_names_index_.find(param_name) == param_names_index_.end())){
+        param_owners_.push_back(-1);
+        // param_name非空，在param_names_index中找不到，则添加该param；
+        // vector<int> param_owners_ 是一个存储parameter "onwer"的一个向量
+        // ——> -1 表示当前Layer就是该parameter的"owner"
+        if(param_name.size()){
+            param_names_index_[param_name] = net_param_id;  // 存储共享参数
+        }
+        const int learnable_param_id = learnable_params_.size();
+        learnable_params_.push_back(params_[net_param_id].get());
+        learnable_param_ids_.push_back(learnable_param_id);
+        has_params_lr_.push_back(param_spec->has_lr_mult());
+        has_params_decay_.push_back(param_spec->has_decay_mult());
+        params_lr_.push_back(param_spec->lr_mult());
+        params_weight_decay_.push_back(param_spec->decay_mult());
+    }else{
+        // 否则说明这个parameter已经存在于之前的某个或者某些网络层里，说明这个parameter是共享于多个layer
+        const int owner_net_param_id = param_names_index_[param_name];  // 共享参数id
+        param_owners_.push_back(owner_net_param_id);
+        const pair<int, int>& owner_index =
+                param_layer_indices_[owner_net_param_id];
+        const int owner_layer_id = owner_index.first;
+        const int owner_param_id = owner_index.second;
+        LOG_IF(INFO, Caffe::root_solver()) << "Sharing parameters '" << param_name
+                                           << "' owned by "
+                                           << "layer '" << layer_names_[owner_layer_id] << "', param "
+                                           << "index " << owner_param_id;
+        Blob<Dtype>* this_blob = layers_[layer_id]->blobs()[param_id].get();
+        Blob<Dtype>* owner_blob =
+                layers_[owner_layer_id]->blobs()[owner_param_id].get();
+        const int param_size = layer_param.param_size();
+
+        if (param_size > param_id && (layer_param.param(param_id).share_mode() ==
+                                      ParamSpec_DimCheckMode_PERMISSIVE)) {
+            // Permissive dimension checking -- only check counts are the same.
+            CHECK_EQ(this_blob->count(), owner_blob->count())
+                    << "Cannot share param '" << param_name << "' owned by layer '"
+                    << layer_names_[owner_layer_id] << "' with layer '"
+                    << layer_names_[layer_id] << "'; count mismatch.  Owner layer param "
+                    << "shape is " << owner_blob->shape_string() << "; sharing layer "
+                    << "shape is " << this_blob->shape_string();
+        } else {
+            // Strict dimension checking -- all dims must be the same.
+            CHECK(this_blob->shape() == owner_blob->shape())
+                    << "Cannot share param '" << param_name << "' owned by layer '"
+                    << layer_names_[owner_layer_id] << "' with layer '"
+                    << layer_names_[layer_id] << "'; shape mismatch.  Owner layer param "
+                    << "shape is " << owner_blob->shape_string() << "; sharing layer "
+                    << "expects shape " << this_blob->shape_string();
+        }
+
+        //获取owner layer的learnable_param_id，并且压入当前layer的向量learnable_param_ids_。
+        //而且在这里也没有把参数blob压入learnable_params_向量（只是将id压入learnable_param_ids_），
+        // 从而避免当前layer与sharing layer之间关于shared parameter blob 的重复
+        const int learnable_param_id = learnable_param_ids_[owner_net_param_id];
 
 
+
+    }
 
 
 
 
 }
+
+
 
 };
