@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/layer.dir/layer.cpp.o"
-  "layer.pdb"
   "layer"
+  "layer.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

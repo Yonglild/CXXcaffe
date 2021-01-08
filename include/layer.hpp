@@ -4,7 +4,7 @@
 
 #ifndef CXXBASIC_LAYER_HPP
 #define CXXBASIC_LAYER_HPP
-#include "include/proto/caffe.pb.h"
+#include "./proto/caffe.pb.h"
 #include <vector>
 #include "Blob.hpp"
 

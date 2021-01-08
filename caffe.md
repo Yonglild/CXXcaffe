@@ -84,3 +84,9 @@ blob_name_to_idx 存储整个blobs_的blob_id和name
 
         learnable_params_, has_params_lr_, has_params_decay_, params_lr_, params_weight_decay_ 维度相同
         learnable_params_是否与params_维度相同???
+
+
+## 2021/01/08 base_conv_layer
+
+
+

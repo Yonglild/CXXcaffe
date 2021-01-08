@@ -11,5 +11,4 @@ add_executable(SyncedMemory SyncedMemory.cpp)
 add_executable(layer layer.cpp)
 add_executable(shared_ptr shared_ptr.cpp)
 
-add_executable(pb_read protobuf_read.cpp)
-add_executable(pb_write protobuf_write.cpp)
+add_executable(base_conv_layer layers/base_conv_layer.cpp)

@@ -128,6 +128,20 @@ namespace caffe{
             return ((((n*channels()+c))*height()+h)*width()+w);
         }
 
+        inline int CanonicalAxisIndex(int axis_index) const {
+            CHECK_GE(axis_index, -num_axes())
+                    << "axis " << axis_index << " out of range for " << num_axes()
+                    << "-D Blob with shape " << shape_string();
+            CHECK_LT(axis_index, num_axes())
+                    << "axis " << axis_index << " out of range for " << num_axes()
+                    << "-D Blob with shape " << shape_string();
+            if (axis_index < 0) {
+                return axis_index + num_axes();
+            }
+            return axis_index;
+        }
+
+
         // 使用cudaMemcpy或者memcpy进行内存的拷贝
         void CopyFrom(const Blob<Dtype>& source, bool copy_diff = false, bool reshape = false);
 
