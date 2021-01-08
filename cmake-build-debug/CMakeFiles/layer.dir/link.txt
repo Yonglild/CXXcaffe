@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/layer.dir/layer.cpp.o  -o layer 

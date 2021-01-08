@@ -2,12 +2,14 @@
 // Created by wyl on 2020/11/26.
 //
 
-
+// https://blog.csdn.net/jinzhuojun/article/details/79834697
 // https://www.cnblogs.com/yymn/articles/7498516.html
 // https://blog.csdn.net/gaoenyang760525/article/details/72874816
 // https://zhuanlan.zhihu.com/p/81667754
 // https://blog.csdn.net/qq_28660035/article/details/80365570
 // https://blog.csdn.net/ricky5000/article/details/68930978
+// https://www.cnblogs.com/yymn/articles/6794796.html
+
 #include "include/net.hpp"
 namespace caffe{
 template<typename Dtype>
@@ -258,10 +260,16 @@ void Net<Dtype>::Init(const NetParameter &in_param) {
     LOG_IF(INFO, Caffe::root_solver()) << "Network initialization done.";
 }
 
+template <typename Dtype>
+void Net<Dtype>::FilterNet(const NetParameter &param, NetParameter *param_filtered) {
+
+}
+
+
 /**AppendTop函数会向整个net的blob列表（blobs_）中添加一个新blob，同时将本层新建的top blob指向该新增blob，
  * 这样就把层的输出blob和blob列表(blobs_)关联起来了。AppendTop函数在新建blob时可能会采用同址计算（in-place computer），
  * 所谓同址计算就是同一层的top blob和bottom blob复用。
- * @tparam Dtype
+ * @param Dtype
  * @param param
  * @param layer_id
  * @param bottom_id
@@ -276,7 +284,6 @@ void Net<Dtype>::AppendTop(const NetParameter &param, const int layer_id, const 
     shared_ptr<LayerParameter> layer_param(new LayerParameter(param.layer(layer_id)));
     const string& blob_name = (layer_param->top_size() > top_id) ?
             layer_param->top(top_id) : "(automatic)";
-
 
     //同址计算:top blob使用和bottom blob相同的地址和id
     //是否使用同址计算由prototxt中对top/bottom blob名字的定义决定
@@ -352,13 +359,18 @@ int Net<Dtype>::AppendBottom(const NetParameter &param, const int layer_id, cons
 }
 
 /**
+ * 1.给某层增加一个可学习参数blob(存放权重/偏置),放入params_, 同时放入learnable_params_;
+ * 2.给某层增加一个params_lr_和params_weight_decay_,用来存放超训练参数
+ * 3.一层中每个可学习参数blob(权重/偏置, learnable_params_)都对应有一个params_lr_和一个
+ * params_weight_decay_, 超训练参数和可学习参数都是从LayerParameter中获取到.
+ * 4.param_names_index_是对一层中可学习参数/超训练参数的总索引
  * @tparam Dtype
  * @param param
  * @param layer_id
  * @param param_id 第layer_id层第param_id个参数
  */
 template <typename Dtype>
-void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const int param_id) {
+void Net<Dtype>::AppendParam(const NetParameter &param, const int layer_id, const int param_id) {
     const LayerParameter& layer_param = layers_[layer_id]->layer_param();
     const int param_size = layer_param.param_size();
     // 如果param_name找不到，？？？？？
@@ -378,10 +390,10 @@ void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const
     // 一个层一般有两个blob,第一个存weight,第二个存bias
     //param_id_vecs_,存储的基本元素是net_param_id，每遍历一个参数blob,net_param_id和param_id_vecs_都会更新
     params_.push_back(layers_[layer_id]->blobs()[param_id]);
-    param_id_vecs_[layer_id].push_back(net_param_id);
+    param_id_vecs_[layer_id].push_back(net_param_id);   // 全局id
     param_layer_indices_.push_back(make_pair(layer_id, param_id));
 
-    // 创建新的参数
+    // 参数信息，里面包含学习率系数和参数衰减等信息(lr_mult, decay_mult)
     ParamSpec default_param_spec;
     const ParamSpec* param_spec = (layer_param.param_size()>param_id)?
             &layer_param.param(param_id):&default_param_spec;
@@ -395,23 +407,23 @@ void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const
         // vector<int> param_owners_ 是一个存储parameter "onwer"的一个向量
         // ——> -1 表示当前Layer就是该parameter的"owner"
         if(param_name.size()){
-            param_names_index_[param_name] = net_param_id;  // 存储共享参数
+            param_names_index_[param_name] = net_param_id;  // 存储共享参数，全局id
         }
         const int learnable_param_id = learnable_params_.size();
         learnable_params_.push_back(params_[net_param_id].get());
         learnable_param_ids_.push_back(learnable_param_id);
-        has_params_lr_.push_back(param_spec->has_lr_mult());
+        has_params_lr_.push_back(param_spec->has_lr_mult());    // 是否有lr_mult
         has_params_decay_.push_back(param_spec->has_decay_mult());
         params_lr_.push_back(param_spec->lr_mult());
         params_weight_decay_.push_back(param_spec->decay_mult());
     }else{
-        // 否则说明这个parameter已经存在于之前的某个或者某些网络层里，说明这个parameter是共享于多个layer
-        const int owner_net_param_id = param_names_index_[param_name];  // 共享参数id
+        // 这个parameter已经存在于之前的某个或者某些网络层里，说明这个parameter是共享于多个layer
+        const int owner_net_param_id = param_names_index_[param_name];  // 共享参数owner全局id
         param_owners_.push_back(owner_net_param_id);
         const pair<int, int>& owner_index =
                 param_layer_indices_[owner_net_param_id];
-        const int owner_layer_id = owner_index.first;
-        const int owner_param_id = owner_index.second;
+        const int owner_layer_id = owner_index.first;       // owner所在layer_id
+        const int owner_param_id = owner_index.second;      // owner在layer_id层的局部id
         LOG_IF(INFO, Caffe::root_solver()) << "Sharing parameters '" << param_name
                                            << "' owned by "
                                            << "layer '" << layer_names_[owner_layer_id] << "', param "
@@ -443,17 +455,195 @@ void Net<Dtype>::AppenParam(const NetParameter &param, const int layer_id, const
         //获取owner layer的learnable_param_id，并且压入当前layer的向量learnable_param_ids_。
         //而且在这里也没有把参数blob压入learnable_params_向量（只是将id压入learnable_param_ids_），
         // 从而避免当前layer与sharing layer之间关于shared parameter blob 的重复
+        // 因为复用, 需要把learnable_param_id再重复放入learnable_param_ids_中
         const int learnable_param_id = learnable_param_ids_[owner_net_param_id];
-
-
-
+        learnable_param_ids_.push_back(learnable_param_id);
+        if(param_spec->has_lr_mult()){
+            if(has_params_lr_[learnable_param_id]){
+                CHECK_EQ(param_spec->lr_mult(), params_lr_[learnable_param_id])
+                    << "Shared param '" << param_name << "' has mismatched lr_mult.";
+            }else{
+                has_params_lr_[learnable_param_id] = true;
+                params_lr_[learnable_param_id] = param_spec->lr_mult();
+            }
+        }
+        if (param_spec->has_decay_mult()) {
+            if (has_params_decay_[learnable_param_id]) {
+                CHECK_EQ(param_spec->decay_mult(),
+                         params_weight_decay_[learnable_param_id])
+                    << "Shared param '" << param_name << "' has mismatched decay_mult.";
+            } else {
+                has_params_decay_[learnable_param_id] = true;
+                params_weight_decay_[learnable_param_id] = param_spec->decay_mult();
+            }
+        }
     }
-
-
-
-
 }
 
+template <typename Dtype>
+void Net<Dtype>::ForwardDebugInfo(const int layer_id) {
+    for (int top_id = 0; top_id < top_vecs_[layer_id].size(); ++top_id) {
+        const Blob<Dtype>& blob = *top_vecs_[layer_id][top_id];
+        const string& blob_name = blob_names_[top_id_vecs_[layer_id][top_id]];
+        const Dtype data_abs_val_mean = blob.asum_data() / blob.count();
+        LOG_IF(INFO, Caffe::root_solver())
+        << "    [Forward] "
+        << "Layer " << layer_names_[layer_id]
+        << ", top blob " << blob_name
+        << " data: " << data_abs_val_mean;
+    }
+    for (int param_id = 0; param_id < layers_[layer_id]->blobs().size();
+         ++param_id) {
+        const Blob<Dtype>& blob = *layers_[layer_id]->blobs()[param_id];
+        const int net_param_id = param_id_vecs_[layer_id][param_id];
+        const string& blob_name = param_display_names_[net_param_id];
+        const Dtype data_abs_val_mean = blob.asum_data() / blob.count();
+        LOG_IF(INFO, Caffe::root_solver())
+        << "    [Forward] "
+        << "Layer " << layer_names_[layer_id]
+        << ", param blob " << blob_name
+        << " data: " << data_abs_val_mean;
+    }
+}
+
+// 执行从start层到end层的前向传递，采用简单的for循环调用。
+// 在前向传播之前为什么要before_forward_和back_forward_????
+template <typename Dtype>
+Dtype Net<Dtype>::ForwardFromTo(int start, int end) {
+    CHECK_GE(start, 0);
+    CHECK_GT(end, layers_.size());
+    Dtype loss = 0;
+    for(int i=0; i<=end; i++){
+        for(int c=0; c<before_forward_.size(); c++){
+            before_forward_[c]->run(i);
+        }
+        Dtype layer_loss = layers_[i]->Forward(bottom_vecs_[i], top_vecs_[i]);
+        loss += layer_loss;
+        if(debug_info_) {ForwardDebugInfo(i);}
+        for(int c=0; c<after_backward_.size(); c++){
+            after_backward_[c]->run(i);
+        }
+    }
+    return loss;
+}
+
+template <typename Dtype>
+Dtype Net<Dtype>::ForwardFrom(int start) {
+    return ForwardFromTo(0, layers_.size()-1);
+}
+
+template <typename Dtype>
+Dtype Net<Dtype>::ForwardTo(int end) {
+    return ForwardFromTo(0, layers_.size()-1);
+}
+
+/*
+ * bottom_vecs_前向计算得到top_vecs_, 并计算loss
+ */
+template <typename Dtype>
+const vector<Blob<Dtype>*>& Net<Dtype>::Forward(Dtype *loss) {
+    if(loss != NULL){
+        *loss = ForwardFromTo(0, layers_.size()-1);
+    }else{
+        ForwardFromTo(0, layers_.size()-1);
+    }
+    return net_output_blobs_;
+}
+
+// !!!!!!!!!!!!!!!
+/*
+功能：把网络输入层的blob读到net_input_blobs_，然后前向计算loss
+*/
+template <typename Dtype>
+const vector<Blob<Dtype>*>& Net<Dtype>::Forward(const vector<Blob<Dtype> *> &bottom, Dtype *loss) {
+    LOG_EVERY_N(WARNING, 1000) << "DEPRECATED: Forward(bottom, loss) "
+                               << "will be removed in a future version. Use Forward(loss).";
+    for(int i=0; i<bottom.size(); i++){
+        net_input_blobs_[i]->CopyFrom(*bottom[i]);  // 将bottom数据复制到net_input_blobs中 cudaMemcpy
+    }
+    return Forward(loss);
+}
+
+template <typename Dtype>
+void Net<Dtype>::BackwardDebugInfo(const int layer_id) {
+    const vector<Blob<Dtype>*>& bottom_vec = bottom_vecs_[layer_id];
+    for (int bottom_id = 0; bottom_id < bottom_vec.size(); ++bottom_id) {
+        if (!bottom_need_backward_[layer_id][bottom_id]) { continue; }
+        const Blob<Dtype>& blob = *bottom_vec[bottom_id];
+        const string& blob_name = blob_names_[bottom_id_vecs_[layer_id][bottom_id]];
+        const Dtype diff_abs_val_mean = blob.asum_diff() / blob.count();
+        LOG_IF(INFO, Caffe::root_solver())
+        << "    [Backward] "
+        << "Layer " << layer_names_[layer_id]
+        << ", bottom blob " << blob_name
+        << " diff: " << diff_abs_val_mean;
+    }
+    for (int param_id = 0; param_id < layers_[layer_id]->blobs().size();
+         ++param_id) {
+        if (!layers_[layer_id]->param_propagate_down(param_id)) { continue; }
+        const Blob<Dtype>& blob = *layers_[layer_id]->blobs()[param_id];
+        const Dtype diff_abs_val_mean = blob.asum_diff() / blob.count();
+        LOG_IF(INFO, Caffe::root_solver())
+        << "    [Backward] "
+        << "Layer " << layer_names_[layer_id]
+        << ", param blob " << param_id
+        << " diff: " << diff_abs_val_mean;
+    }
+}
+
+template <typename Dtype>
+void Net<Dtype>::BackwardFromTo(int start, int end) {
+    CHECK_GE(end, 0);
+    CHECK_LT(end, layers_.size());
+    for(int i=start; i>=end; --i){
+        for(int c=0; c<before_backward_.size(); c++){
+            before_backward_[c]->run(i);
+        }
+        if(layer_need_backward_[i]){
+            layers_[i]->Backward(top_vecs_[i], bottom_need_backward_[i], bottom_vecs_[i]);
+            if (debug_info_) {BackwardDebugInfo(i); }
+        }
+        for(int c=0; c<after_backward_.size(); c++){
+            after_backward_[c]->run(i);
+        }
+    }
+}
+
+template <typename Dtype>
+void Net<Dtype>::BackwardFrom(int start) {
+    BackwardFromTo(start, 0);
+}
+
+template <typename Dtype>
+void Net<Dtype>::BackwardTo(int end) {
+    BackwardFromTo(layers_.size() - 1, end);
+}
+
+template <typename Dtype>
+void Net<Dtype>::Backward() {
+    BackwardFromTo(layers_.size()-1, 0);
+    if (debug_info_) {
+        Dtype asum_data = 0, asum_diff = 0, sumsq_data = 0, sumsq_diff = 0;
+        for (int i = 0; i < learnable_params_.size(); ++i) {
+            asum_data += learnable_params_[i]->asum_data();
+            asum_diff += learnable_params_[i]->asum_diff();
+            sumsq_data += learnable_params_[i]->sumsq_data();
+            sumsq_diff += learnable_params_[i]->sumsq_diff();
+        }
+        const Dtype l2norm_data = std::sqrt(sumsq_data);
+        const Dtype l2norm_diff = std::sqrt(sumsq_diff);
+        LOG(ERROR) << "    [Backward] All net params (data, diff): "
+                   << "L1 norm = (" << asum_data << ", " << asum_diff << "); "
+                   << "L2 norm = (" << l2norm_data << ", " << l2norm_diff << ")";
+    }
+}
+
+template <typename Dtype>
+void Net<Dtype>::Reshape() {
+    for(int i=0; i<layers_.size(); i++){
+        layers_[i]->Reshape(bottom_vecs_[i], top_vecs_[i]);
+    }
+}
 
 
 };

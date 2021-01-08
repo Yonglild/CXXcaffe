@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SyncedMemory.dir/SyncedMemory.cpp.o  -o SyncedMemory 

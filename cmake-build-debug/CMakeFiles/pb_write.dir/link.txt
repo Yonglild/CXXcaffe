@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/pb_write.dir/protobuf_write.cpp.o  -o pb_write 

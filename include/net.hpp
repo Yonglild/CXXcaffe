@@ -23,7 +23,6 @@ namespace caffe {
         virtual ~Net();
 
         void Init(const NetParameter &in_param);
-        void FilterNet();
         const vector<Blob<Dtype> *> &Forward(Dtype *loss = NULL);
 
         const vector<Blob<Dtype> *> &ForwardPrefilled(Dtype *loss = NULL) {
@@ -33,6 +32,8 @@ namespace caffe {
         }
 
         Dtype ForwardFromTo(int start, int end);
+        Dtype ForwardFrom(int start);
+        Dtype ForwardTo(int start);
 
         Dtype FrowardFrom(int start);
 
@@ -65,10 +66,24 @@ namespace caffe {
         void SharedWeights();
         static void FilterNet(const NetParameter& param,
                 NetParameter* param_filtered);
+
+        // ??????实现什么功能
+        class Callback{
+        protected:
+            virtual void run(int layer) = 0;
+
+            template<class T>
+                    friend class Net;
+        };
+
+
+
     protected:
         int AppendBottom(const NetParameter& param, const int layer_id, const int bottom_id, set<string>* available_blobs, map<string, int>* blob_name_to_idx);
         void AppendTop(const NetParameter& param, const int layer_id, const int top_id, set<string>* available_blobs, map<string, int>* blob_name_to_idx);
-        void AppenParam(const NetParameter& param, const int layer_id, const int param_id);
+        void AppendParam(const NetParameter& param, const int layer_id, const int param_id);
+        void ForwardDebugInfo(const int layer_id);
+        void BackwardDebugInfo(const int layer_id);
         Phase phase_;
         string name_;
         vector<vector<Blob<Dtype>*>> bottom_vecs_;
@@ -109,8 +124,14 @@ namespace caffe {
         vector<bool> has_params_lr_;
         vector<float> params_weight_decay_;
         vector<bool> has_params_decay_;
-    };
 
+        bool debug_info_; // 是否显示debug信息
+        // ??????????
+        vector<Callback*> before_forward_;
+        vector<Callback*> after_forward_;
+        vector<Callback*> before_backward_;
+        vector<Callback*> after_backward_;
+    };
 }
 
 #endif  //CXXBASIC_NET_H

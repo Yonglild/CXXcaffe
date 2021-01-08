@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/shared_ptr.dir/shared_ptr.cpp.o  -o shared_ptr 

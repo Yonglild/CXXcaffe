@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/pb_read.dir/protobuf_read.cpp.o  -o pb_read 

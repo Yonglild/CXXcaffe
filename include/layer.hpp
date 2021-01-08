@@ -76,7 +76,6 @@ namespace caffe{
         virtual void Backward_gpu(const vector<Blob<Dtype>*>& top, const vector<bool>& propagate_down, const vector<Blob<Dtype>*>& bottom){
             return Backward_cpu(top, propagate_down, bottom);
         };
-
     };
 }
 
@@ -84,7 +83,7 @@ namespace caffe{
 template <typename Dtype>
 inline Dtype caffe::Layer<Dtype>::Forward(const vector<Blob<Dtype> *> &bottom, const vector<Blob<Dtype> *> &top) {
     Dtype loss = 0;
-    Reshape(bottom, top);
+    Reshape(bottom, top);       // 在Forward之前为什么要Reshape()？？？？？？？
     switch(Caffe::mode()){
         case Caffe::CPU:
             Forward_cpu(bottom, top);

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wyl/CLionProjects/CXXcaffe/Blob.cpp
+include/Blob.hpp
+/home/wyl/CLionProjects/CXXcaffe/include/Blob.hpp
+
+/home/wyl/CLionProjects/CXXcaffe/include/Blob.hpp
+iostream
+-
+vector
+-
+string
+-
+sstream
+-
+memory
+-
+SyncedMemory.hpp
+/home/wyl/CLionProjects/CXXcaffe/include/SyncedMemory.hpp
+
+/home/wyl/CLionProjects/CXXcaffe/include/SyncedMemory.hpp
+iostream
+-
+
