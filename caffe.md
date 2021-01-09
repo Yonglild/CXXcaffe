@@ -88,5 +88,7 @@ blob_name_to_idx 存储整个blobs_的blob_id和name
 
 ## 2021/01/08 base_conv_layer
 
+**LayerSetUp**
 
+Blob<int>  kernel_shape_  卷积核的大小。先Reshape卷积核维度，并将conv_param中的h, w填入mutable_cpu_data()中；
 
