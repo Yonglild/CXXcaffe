@@ -88,7 +88,14 @@ blob_name_to_idx 存储整个blobs_的blob_id和name
 
 ## 2021/01/08 base_conv_layer
 
+base_conv_layer继承自Layer
+
 **LayerSetUp**
 
-Blob<int>  kernel_shape_  卷积核的大小。先Reshape卷积核维度，并将conv_param中的h, w填入mutable_cpu_data()中；
+1. 根据conv_param设置kernel_shape_, stride_, pad, dilation  等blob<int>（尺寸）；
+2. 根据输入的张量和conv_param设置滤波器的尺寸weight_shape，核实尺寸是否与已有滤波器相同；若滤波器不存在，则初始化滤波器；
+3. 设置滤波器参数反传播
 
+**Reshape**
+
+继承自Layer中的Reshape

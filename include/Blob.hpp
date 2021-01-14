@@ -67,7 +67,7 @@ namespace caffe{
         }
 
         /**
-         * @brief 获取从start_axis到end_axis的维数
+         * @brief 获取从start_axis到end_axis的容量
          * @param start_axis, end_axis
          * @return
          */

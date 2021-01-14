@@ -85,7 +85,7 @@ namespace caffe {
         vector<int> output_shape_;
         // 层输入的形状，存在vector里，返回指针，因为是别的层的输出，直接用指针指向之前已经存在的上一层的output_shape_。
         const vector<int>* bottom_shape_;
-        // 空间轴个数，就是输入是几维图像
+        // 空间轴个数，就是输入是几维图像,一般为２维
         int num_spatial_axes_;
         // 输入度维度 = 输入通道数*输入图像的h*输入图像的w
         int bottom_dim_;

@@ -18,7 +18,7 @@ namespace caffe {
         CHECK_GE(num_spatial_axes_, 0);
 
         // vector初始化，一个元素，值为num_spatial_axes_
-        //当num_spatial_axes_==2时，spatial_dim_blob_shape这个vector只包含一个元素且值为2
+        // 当num_spatial_axes_==2时，spatial_dim_blob_shape这个vector只包含一个元素且值为2
         vector<int> spatial_dim_blob_shape(1, std::max(num_spatial_axes_, 1));  // 为什么只包含一个元素
 
         // 调用blob.cpp里的 void Blob<Dtype>::Reshape(const vector<int>& shape)
@@ -79,6 +79,7 @@ namespace caffe {
                 CHECK_GT(stride_data[i], 0) << "Stride dimensions must be nonzero.";
             }
         }
+
         // Setup pad dimensions (pad_).
         pad_.Reshape(spatial_dim_blob_shape);
         int* pad_data = pad_.mutable_cpu_data();
@@ -102,6 +103,7 @@ namespace caffe {
                               conv_param.pad((num_pad_dims == 1) ? 0 : i);
             }
         }
+
         // Setup dilation dimensions (dilation_).
         dilation_.Reshape(spatial_dim_blob_shape);
         int* dilation_data = dilation_.mutable_cpu_data();
@@ -127,7 +129,76 @@ namespace caffe {
             if (!is_1x1_) { break; }
         }
 
+        channels_ = bottom[0]->shape(channel_axis_);
+        num_output_ = this->layer_param_.convolution_param().num_output();
+        CHECK_GT(num_output_, 0);       // 大于
+        group_ = this->layer_param_.convolution_param().group();
+        CHECK_EQ(channels_%group_, 0);  // 等于
+        if(reverse_dimensions()){
+            conv_out_channels_ = channels_;
+            conv_in_channels_ = num_output_;
+        }else{
+            conv_out_channels_ = num_output_;
+            conv_in_channels_ = channels_;
+        }
+
+        vector<int> weight_shape(2);
+        weight_shape[0] = conv_out_channels_;
+        weight_shape[1] = conv_in_channels_ / group_;
+
+        for(int i=0; i<num_spatial_axes_; ++i){
+            weight_shape.push_back(kernel_shape_data[i]);
+        }
+
+        // 是否拥有bias_term
+        bias_term_ = this->layer_param_.convolution_param().bias_term();
+        vector<int> bias_shape(bias_term_, num_output_);
+        if(this->blobs_.size()>0){
+            // 已有权重，跳过初始化；否则需要初始化
+            CHECK_EQ(1+bias_term_, this->blobs_.size())
+            << "Incorrect number of weight blobs";
+            if(weight_shape != this->blobs_[0].shape()){
+                Blob<Dtype> weight_shaped_blob(weight_shape);
+                LOG(FATAL)<<"Incorrect weight shape: expected shape "
+                << weight_shaped_blob.shape_string() << "; instead, shape was"
+                << this->blobs_.shape_string();
+            }
+            if(bias_term_ && bias_shape != this->blobs_[1].shape()){
+                Blob<Dtype> bias_shaped_blob(bias_shape);
+                LOG(FATAL) << "Incorrect bias shape: expected shape "
+                           << bias_shaped_blob.shape_string() << "; instead, shape was "
+                           << this->blobs_[1]->shape_string();
+            }
+            LOG(INFO) << "Skipping parameter initialization";
+        }else{
+            if(bias_term_){
+                this->blobs_.resize(2);
+            }else{
+                this->blobs_.resize(1);
+            }
+            this->blobs_[0].reset(new Blob<Dtype>(weight_shape));
+            // ?????
+            shared_ptr<Fillter<Dtype>> weight_fillter(GetFillter<Dtype>(
+                    this->layer_param_.convolution_param().weight_filter()));
+            weight_fillter->Fill(this->blobs_[0].get());
+
+            if(bias_term_){
+                this->blobs_[1].reset(new Blob<Dtype>(bias_shape));
+                shared_ptr<Filler<Dtype> > bias_filler(GetFiller<Dtype>(
+                        this->layer_param_.convolution_param().bias_filler()));
+                bias_filler->Fill(this->blobs_[1].get());
+            }
+        }
+        kernel_dim_ = this->blobs_[0]->count(1);    //　滤波器大小：通道数 × h * w
+        weight_offset_ = conv_out_channels_ * kernel_dim_ / group_;
+        this->param_propagate_down_.resize(this->blobs_.size(), true);  // 滤波器默认可后向传播
+}
 
 
-    }
+template <typename Dtype>
+void BaseConvolutionLayer<Dtype>::Reshape(const vector<Blob<Dtype> *> &bottom,
+                                          const vector<Blob<Dtype> *> &top) {
+
+}
+
 }
