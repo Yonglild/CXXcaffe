@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SyncedMemory.dir/SyncedMemory.cpp.o"
-  "SyncedMemory.pdb"
   "SyncedMemory"
+  "SyncedMemory.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -81,7 +81,8 @@ namespace caffe {
         // col_buffer的形状 = [kernel_dim_, conv_out_spatial_dim_ ]
         // 即将图像转化成利于卷积的展开体col形式（具体参考src/utils/im2col.cpp），存于col_buffer，将 卷积核权值×col_buffer=卷积输出，所以其形状为上述样子。
         vector<int> col_buffer_shape_;
-        /// @brief The spatial dimensions of the output.层输出的形状，存在vector里
+        /// @brief The spatial dimensions of the output.
+        // 输出blob的空间形状，一般是二维，存在vector里
         vector<int> output_shape_;
         // 层输入的形状，存在vector里，返回指针，因为是别的层的输出，直接用指针指向之前已经存在的上一层的output_shape_。
         const vector<int>* bottom_shape_;
@@ -91,8 +92,7 @@ namespace caffe {
         int bottom_dim_;
         // 输出维度 = 输出通道数*输出图像的h*输出图像的w
         int top_dim_;
-        // 输入图像的哪个axis是channel,一般是第二个维度
-        int channel_axis_;
+        int channel_axis_;  // 输入图像的哪个axis是channel,一般是第二个维度
         // 堆大小
         int num_;
         // 通道数

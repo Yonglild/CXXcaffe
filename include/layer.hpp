@@ -37,7 +37,7 @@ namespace caffe{
         // top是未成型的，在Forward之前调用该函数调整top的形状
         virtual void LayerSetUp(const vector<Blob<Dtype>*>& bottom,const vector<Blob<Dtype>*>& top){}
 
-        //根据输入blob的形状，按照需要调整top blobs形状，并且调整内部缓存的形状
+        //在forward之前根据输入blob的形状，按照需要调整top blobs形状，并且调整内部缓存的形状
         //和其他必要的调整，使该层能适应bottom blobs
         virtual void Reshape(const vector<Blob<Dtype>*>& bottom,const vector<Blob<Dtype>*>& top){}
 

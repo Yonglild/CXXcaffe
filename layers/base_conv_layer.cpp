@@ -194,11 +194,53 @@ namespace caffe {
         this->param_propagate_down_.resize(this->blobs_.size(), true);  // 滤波器默认可后向传播
 }
 
-
+// 继承自Layer
 template <typename Dtype>
 void BaseConvolutionLayer<Dtype>::Reshape(const vector<Blob<Dtype> *> &bottom,
                                           const vector<Blob<Dtype> *> &top) {
+    const int first_spatial_axis = channel_axis_ + 1;
+    CHECK_EQ(bottom[0]->num_axis(), first_spatial_axis + num_spatial_axes_)
+    << "bottom num_axis may not change.";
+    CHECK_EQ(bottom[0]->shape(channel_axis_), channel_axis_)
+    << "Input size incompatible with convolution kernel.";
+    // 如果输入多个blob，blob的尺寸要一致
+    for(int bottom_id=1; bottom_id<bottom.size(); ++bottom_id){
+        CHECK_EQ(bottom[0].shape()==bottom[bottom_id]->shape())
+        << "shape mismatch - bottom[0]:" << bottom[0]->shape_string()
+        << "vs. bottom[" << bottom_id << "]: "
+        << bottom[bottom_id]->shape_string();
+    }
+
+    bottom_shape_ = &bottom[0]->shape(); // (b,c,h,w)
+    // 虚函数，在继承类中具体实现。根据步长、padding等计算输出blob的尺寸
+    compute_output_shape();
+    // vector初始化 [begin, end)左闭右开；
+    vector<int> top_shape(bottom[0]->shape().begin(),
+            bottom[0]->shape().begin() + channel_axis_);
+    top_shape.push_back(num_output_);   // 输出个数
+    // 将output_shape_压入top_shape
+    for(int i=0; i<num_spatial_axes_; ++i){
+        top_shape.push_back(output_shape_[i]);
+    }
+    // 输出blob重置
+    for(int top_id=0; top_id<top.size(); top_id++){
+        top[top_id]->Reshape(top_shape);
+    }
+
+    if(reverse_dimensions()){
+        conv_out_spatial_dim_ = bottom[0]->count(first_spatial_axis);
+    }else{
+        conv_out_spatial_dim_ = top[0]->count(first_spatial_axis);
+    }
+
+
+    col_offset_ = kernel_dim_ * conv_out_spatial_dim_;
+    output_offset_ = conv_out_channels_ * conv_out_spatial_dim_ / group_;
+
+
+
 
 }
+
 
 }

@@ -27,11 +27,155 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="base_conv_layer">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/base_conv_layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 base_conv_layer"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="base_conv_layer/fast">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/base_conv_layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 base_conv_layer/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shared_ptr">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shared_ptr/fast">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="layer">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="layer/fast">
+				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -176,150 +320,6 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 SyncedMemory/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="layer">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="layer/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="shared_ptr">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="shared_ptr/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="base_conv_layer">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/base_conv_layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 base_conv_layer"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="base_conv_layer/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/base_conv_layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 base_conv_layer/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/shared_ptr.dir/shared_ptr.cpp.o"
-  "shared_ptr.pdb"
   "shared_ptr"
+  "shared_ptr.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
