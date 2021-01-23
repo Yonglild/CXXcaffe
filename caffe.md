@@ -98,4 +98,9 @@ base_conv_layer继承自Layer
 
 **Reshape**
 
-继承自Layer中的Reshape
+继承自Layer中的Reshape()
+
+1. 核实bottom的尺寸
+2. 计算输出张量的尺寸，并初始化输出张量(重置)
+3. 
+

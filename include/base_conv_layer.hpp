@@ -79,7 +79,7 @@ namespace caffe {
         Blob<int> conv_input_shape_;
         /// @brief The spatial dimensions of the col_buffer.
         // col_buffer的形状 = [kernel_dim_, conv_out_spatial_dim_ ]
-        // 即将图像转化成利于卷积的展开体col形式（具体参考src/utils/im2col.cpp），存于col_buffer，将 卷积核权值×col_buffer=卷积输出，所以其形状为上述样子。
+        // 即将输入图像转化成利于卷积的展开体col形式（具体参考src/utils/im2col.cpp），存于col_buffer.
         vector<int> col_buffer_shape_;
         /// @brief The spatial dimensions of the output.
         // 输出blob的空间形状，一般是二维，存在vector里

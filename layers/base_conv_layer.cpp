@@ -213,7 +213,7 @@ void BaseConvolutionLayer<Dtype>::Reshape(const vector<Blob<Dtype> *> &bottom,
 
     bottom_shape_ = &bottom[0]->shape(); // (b,c,h,w)
     // 虚函数，在继承类中具体实现。根据步长、padding等计算输出blob的尺寸
-    compute_output_shape();
+    compute_output_shape();     // 计算结果放哪里, 放在output_shape_???
     // vector初始化 [begin, end)左闭右开；
     vector<int> top_shape(bottom[0]->shape().begin(),
             bottom[0]->shape().begin() + channel_axis_);
@@ -222,20 +222,45 @@ void BaseConvolutionLayer<Dtype>::Reshape(const vector<Blob<Dtype> *> &bottom,
     for(int i=0; i<num_spatial_axes_; ++i){
         top_shape.push_back(output_shape_[i]);
     }
-    // 输出blob重置
+    // 重置blob
     for(int top_id=0; top_id<top.size(); top_id++){
         top[top_id]->Reshape(top_shape);
     }
 
+    // 输出张量的单个通道的像素个数
     if(reverse_dimensions()){
         conv_out_spatial_dim_ = bottom[0]->count(first_spatial_axis);
     }else{
         conv_out_spatial_dim_ = top[0]->count(first_spatial_axis);
     }
 
+    // 类似 kernel_dim_ = conv_in_channels_ * kernel_h_ * kernel_w_; //对应一个输出的feature map
+    col_offset_ = kernel_dim_ * conv_out_spatial_dim_;  // 单个通道的图像计算矩阵(大小)
+    output_offset_ = conv_out_channels_ * conv_out_spatial_dim_ / group_;   // 最后计算得到的矩阵的大小
 
-    col_offset_ = kernel_dim_ * conv_out_spatial_dim_;
-    output_offset_ = conv_out_channels_ * conv_out_spatial_dim_ / group_;
+    //
+    vector<int> bottom_dim_blob_shape(1, num_spatial_axes_ + 1);
+    conv_input_shape_.Reshape(bottom_dim_blob_shape);   // [输入图像通道数, 输入图像h, 输入图像w]
+    int* conv_input_shape_data = conv_input_shape_.mutable_cpu_data();
+    for(int i=0; i<num_spatial_axes_; i++){
+        if(reverse_dimensions()){
+            conv_input_shape_data[i] = top[0]->shape(channel_axis_ + 1);
+        }else{
+            conv_input_shape_data[i] = bottom[0]->shape(channel_axis_ + 1);
+        }
+    }
+
+    // https://www.cnblogs.com/pursuiting/p/8563246.html
+    col_buffer_shape_.clear();
+    col_buffer_shape_.push_back(kernel_dim_ * group_);
+    for(int i=0; i<num_spatial_axes_; i++){
+        if(reverse_dimensions()){
+            col_buffer_shape_.push_back(input_shape(i+1));
+        }else{
+            col_buffer_shape_.push_back(output_shape_[i]);
+        }
+    }
+    col_buffer_.Reshape(col_buffer_shape_);
 
 
 
