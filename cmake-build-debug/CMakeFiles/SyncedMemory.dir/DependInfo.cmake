@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.cpp" "/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/SyncedMemory.dir/SyncedMemory.cpp.o"
+  "/home/wyl/CXXcaffe/SyncedMemory.cpp" "/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles/SyncedMemory.dir/SyncedMemory.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/util/im2col.hpp"
   "/proto/caffe.pb.h"
   )
 

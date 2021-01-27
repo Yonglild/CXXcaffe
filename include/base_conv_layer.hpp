@@ -79,7 +79,7 @@ namespace caffe {
         Blob<int> conv_input_shape_;
         /// @brief The spatial dimensions of the col_buffer.
         // col_buffer的形状 = [kernel_dim_, conv_out_spatial_dim_ ]
-        // 即将输入图像转化成利于卷积的展开体col形式（具体参考src/utils/im2col.cpp），存于col_buffer.
+        // 即将输入图像转化成利于卷积的展开体col形式（具体参考src/util/im2col.cpp），存于col_buffer.
         vector<int> col_buffer_shape_;
         /// @brief The spatial dimensions of the output.
         // 输出blob的空间形状，一般是二维，存在vector里
@@ -186,9 +186,9 @@ namespace caffe {
         int num_kernels_col2im_;
         int conv_out_channels_;
         int conv_in_channels_;
-        int conv_out_spatial_dim_;
+        int conv_out_spatial_dim_;  // 输出张量的单个通道的像素个数
         int kernel_dim_;
-        int col_offset_;
+        int col_offset_;            // Cin矩阵的offset(排成一行的元素总数)
         int output_offset_;
 
         Blob<Dtype> col_buffer_;

@@ -8,343 +8,450 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="base_conv_layer">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/base_conv_layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/base_conv_layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 base_conv_layer"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 base_conv_layer"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="base_conv_layer/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/base_conv_layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/base_conv_layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 base_conv_layer/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 base_conv_layer/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="shared_ptr">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="shared_ptr/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="layer">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="layer/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Blob">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Blob/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="im2col">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/im2col" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 im2col"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="im2col/fast">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/im2col" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 im2col/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="net">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/net" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/net" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 net"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 net"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="net/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/net" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/net" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 net/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 net/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="SyncedMemory">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/SyncedMemory" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/SyncedMemory" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 SyncedMemory"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 SyncedMemory"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="SyncedMemory/fast">
-				<Option output="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/SyncedMemory" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug"/>
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/SyncedMemory" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 SyncedMemory/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 SyncedMemory/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/wyl/CLionProjects/CXXcaffe/Blob.cpp">
+		<Unit filename="/home/wyl/CXXcaffe/Blob.cpp">
 			<Option target="Blob"/>
 		</Unit>
-		<Unit filename="/home/wyl/CLionProjects/CXXcaffe/SyncedMemory.cpp">
+		<Unit filename="/home/wyl/CXXcaffe/SyncedMemory.cpp">
 			<Option target="SyncedMemory"/>
 		</Unit>
-		<Unit filename="/home/wyl/CLionProjects/CXXcaffe/layer.cpp">
+		<Unit filename="/home/wyl/CXXcaffe/layer.cpp">
 			<Option target="layer"/>
 		</Unit>
-		<Unit filename="/home/wyl/CLionProjects/CXXcaffe/layers/base_conv_layer.cpp">
+		<Unit filename="/home/wyl/CXXcaffe/layers/base_conv_layer.cpp">
 			<Option target="base_conv_layer"/>
 		</Unit>
-		<Unit filename="/home/wyl/CLionProjects/CXXcaffe/net.cpp">
+		<Unit filename="/home/wyl/CXXcaffe/net.cpp">
 			<Option target="net"/>
 		</Unit>
-		<Unit filename="/home/wyl/CLionProjects/CXXcaffe/shared_ptr.cpp">
+		<Unit filename="/home/wyl/CXXcaffe/shared_ptr.cpp">
 			<Option target="shared_ptr"/>
 		</Unit>
-		<Unit filename="/home/wyl/CLionProjects/CXXcaffe/CMakeLists.txt">
+		<Unit filename="/home/wyl/CXXcaffe/util/im2col.cpp">
+			<Option target="im2col"/>
+		</Unit>
+		<Unit filename="/home/wyl/CXXcaffe/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

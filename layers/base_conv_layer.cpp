@@ -234,11 +234,11 @@ void BaseConvolutionLayer<Dtype>::Reshape(const vector<Blob<Dtype> *> &bottom,
         conv_out_spatial_dim_ = top[0]->count(first_spatial_axis);
     }
 
-    // 类似 kernel_dim_ = conv_in_channels_ * kernel_h_ * kernel_w_; //对应一个输出的feature map
-    col_offset_ = kernel_dim_ * conv_out_spatial_dim_;  // 单个通道的图像计算矩阵(大小)
-    output_offset_ = conv_out_channels_ * conv_out_spatial_dim_ / group_;   // 最后计算得到的矩阵的大小
+    // 类似 kernel_dim_ = conv_in_channels_ * kernel_h_ * kernel_w_;
+    col_offset_ = kernel_dim_ * conv_out_spatial_dim_;  // Cin矩阵的大小 （输入图像的计算矩阵）
+    output_offset_ = conv_out_channels_ * conv_out_spatial_dim_ / group_;   // Cout矩阵的大小
 
-    //
+    // 输入图像的shape
     vector<int> bottom_dim_blob_shape(1, num_spatial_axes_ + 1);
     conv_input_shape_.Reshape(bottom_dim_blob_shape);   // [输入图像通道数, 输入图像h, 输入图像w]
     int* conv_input_shape_data = conv_input_shape_.mutable_cpu_data();
@@ -250,7 +250,12 @@ void BaseConvolutionLayer<Dtype>::Reshape(const vector<Blob<Dtype> *> &bottom,
         }
     }
 
+    // 得到col_buffer的形状
     // https://www.cnblogs.com/pursuiting/p/8563246.html
+    // https://blog.csdn.net/u010417185/article/details/52192126
+    // https://blog.csdn.net/ayst123/article/details/43924151
+    // https://www.cnblogs.com/darkknightzh/p/10486686.html#_label3
+    // col_buffer_shape_ [kernel_dim_, conv_out_spatial_dim_ ]
     col_buffer_shape_.clear();
     col_buffer_shape_.push_back(kernel_dim_ * group_);
     for(int i=0; i<num_spatial_axes_; i++){
@@ -260,12 +265,23 @@ void BaseConvolutionLayer<Dtype>::Reshape(const vector<Blob<Dtype> *> &bottom,
             col_buffer_shape_.push_back(output_shape_[i]);
         }
     }
+    // 将col_buffer变形
     col_buffer_.Reshape(col_buffer_shape_);
+    bottom_dim_ = bottom[0]->count(channel_axis_);// 输入通道数*输入图像的h*输入图像的w
+    top_dim_ = top[0]->count(channel_axis_);
+    num_kernels_im2col_ = conv_in_channels_ * conv_out_spatial_dim_;
+    num_kernels_col2im_ = reverse_dimensions()?top_dim_:bottom_dim_;
 
-
-
-
+    out_spatial_dim_ = top[0]->count(first_spatial_axis);
+        if (bias_term_) {
+            vector<int> bias_multiplier_shape(1, out_spatial_dim_);
+            bias_multiplier_.Reshape(bias_multiplier_shape);
+            caffe_set(bias_multiplier_.count(), Dtype(1),
+                      bias_multiplier_.mutable_cpu_data());
+        }
 }
+
+
 
 
 }
