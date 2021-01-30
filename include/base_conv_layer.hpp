@@ -197,6 +197,4 @@ namespace caffe {
 
 }  // namespace caffe
 
-#endif  // CAFFE_BASE_CONVOLUTION_LAYER_HPP_
-
 #endif //CXXBASIC_BASE_CONV_LAYER_H

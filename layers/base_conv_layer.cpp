@@ -281,6 +281,20 @@ void BaseConvolutionLayer<Dtype>::Reshape(const vector<Blob<Dtype> *> &bottom,
         }
 }
 
+template <typename Dtype>
+void BaseConvolutionLayer<Dtype>::forward_cpu_gemm(const Dtype *input, const Dtype *weights, Dtype *output,
+                                                   bool skip_im2col) {
+    const Dtype* col_buff = input;   // 一维数组
+    if(!is_1x1_){
+        if(!skip_im2col){
+            conv_im2col_cpu(input, col_buffer_.mutable_cpu_data()); // col_buffer_是Blob类型
+        }
+        col_buff = col_buffer_.cpu_data();
+    }
+    // W*Cin = Cout 矩阵乘法
+    for()
+}
+
 
 
 

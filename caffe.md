@@ -108,3 +108,36 @@ base_conv_layer继承自Layer
 im2col  得到计算矩阵data_col，data_col本质上是一维的数组。
 本质上图像并没有填充0,只是用了一些逻辑的技巧,达到了padding的效果。
 大意是，如果取到的点是图像界外的，则默认是padding出来的像素。
+
+熟练应用：
+cpu下矩阵加速库：openblas和openblas
+GPU下：cublas
+在实际中，我们往往会采用指令集并行和GPU对矩阵乘法进行加速。
+用指令集优化矩阵乘法难度比较大，非专业人士不建议采用，而且幸运的是我们现在有很多开源矩阵运算库，性能大概率超过手写的矩阵乘法。
+CPU下的矩阵运算库有openblas和mkl等，GPU下有cublas，它们都是对fortran blas接口的实现。
+在上述加速库的基础上，我们可以再对矩阵进行分割实现多核或者多机的并行。
+在目前情况下，要实现快速的矩阵乘法，最便捷快速的方法就是用好openblas和cublas。
+
+https://blog.csdn.net/ZhikangFu/article/details/78258393
+cblas_sgemm(order,transA,transB,M,N,K,ALPHA,A,LDA,B,LDB,BETA,C,LDC);
+
+函数作用：C=alpha*A*B+beta*C
+
+alpha =1,beta =0 的情况下，等于两个矩阵相成。
+
+第一参数 oreder 候选值 有ClasRowMajow 和ClasColMajow 这两个参数决定一维数组怎样存储在内存中,
+
+一般用ClasRowMajow。
+参数 transA和transB ：表示矩阵A，B是否进行转置。候选参数 CblasTrans 和CblasNoTrans.
+
+参数M：表示 A或C的行数。如果A转置，则表示转置后的行数
+
+参数N：表示 B或C的列数。如果B转置，则表示转置后的列数。
+
+参数K：表示 A的列数或B的行数（A的列数=B的行数）。如果A转置，则表示转置后的列数。
+
+参数LDA：表示A的列数，与转置与否无关。 与在一维数组中的offset类似。
+
+参数LDB：表示B的列数，与转置与否无关。
+
+参数LDC：始终=N
