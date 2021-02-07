@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wyl/CXXcaffe/layer.cpp" "/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles/layer.dir/layer.cpp.o"
+  "/home/wyl/CLionProjects/CXXcaffe/layer.cpp" "/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/layer.dir/layer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

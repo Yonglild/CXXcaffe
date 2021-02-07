@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wyl/CXXcaffe/shared_ptr.cpp" "/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles/shared_ptr.dir/shared_ptr.cpp.o"
+  "/home/wyl/CLionProjects/CXXcaffe/shared_ptr.cpp" "/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/shared_ptr.dir/shared_ptr.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
