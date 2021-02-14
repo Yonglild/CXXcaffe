@@ -4,13 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wyl/CLionProjects/CXXcaffe/shared_ptr.cpp" "/home/wyl/CLionProjects/CXXcaffe/cmake-build-debug/CMakeFiles/shared_ptr.dir/shared_ptr.cpp.o"
+  "/home/wyl/CXXcaffe/shared_ptr.cpp" "/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles/shared_ptr.dir/shared_ptr.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/util/im2col.hpp"
+  "/util/math_functions.hpp"
+  "/layers/base_conv_layer.hpp"
+  "/layers/conv_layer.hpp"
+  "/layers/pooling_layer.hpp"
   "/proto/caffe.pb.h"
   )
 

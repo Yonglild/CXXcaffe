@@ -4,9 +4,9 @@
 #ifndef CXXBASIC_BASE_CONV_LAYER_H
 #define CXXBASIC_BASE_CONV_LAYER_H
 
-#include "../include/Blob.hpp"
-#include "../include/layer.hpp"
-#include "../include/proto/caffe.pb.h"
+#include "../Blob.hpp"
+#include "../layer.hpp"
+#include "../proto/caffe.pb.h"
 
 namespace caffe {
 
@@ -187,7 +187,7 @@ namespace caffe {
         int conv_out_channels_;
         int conv_in_channels_;
         int conv_out_spatial_dim_;  // 输出张量的单个通道的像素个数
-        int kernel_dim_;
+        int kernel_dim_;            // 滤波器大小=通道*h*w
         int col_offset_;            // Cin矩阵的offset(排成一行的元素总数)
         int output_offset_;
 

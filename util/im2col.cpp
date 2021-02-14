@@ -12,7 +12,5 @@ void im2col_cpu(const Dtype* data_im, const int channels,
                 const int stride_w, const int dilation_h, const int dilation_w,
                 Dtype* data_col){
 
-
 }
-
 }

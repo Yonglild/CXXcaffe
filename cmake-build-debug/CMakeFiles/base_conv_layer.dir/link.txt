@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/base_conv_layer.dir/layers/base_conv_layer.cpp.o  -o base_conv_layer 
