@@ -2,8 +2,8 @@
 // Created by wyl on 21-2-14.
 //
 
-#ifndef CXXBASIC_POOLING_LAYER_H
-#define CXXBASIC_POOLING_LAYER_H
+#ifndef CXXBASIC_POOLING_LAYER_HPP
+#define CXXBASIC_POOLING_LAYER_HPP
 
 #include <vector>
 #include "../Blob.hpp"
@@ -44,4 +44,4 @@ protected:
 };
 }
 
-#endif //CXXBASIC_POOLING_LAYER_H
+#endif //CXXBASIC_POOLING_LAYER_HPP

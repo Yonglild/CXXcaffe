@@ -2,8 +2,8 @@
 // Created by wyl on 21-2-14.
 //
 
-#ifndef CXXBASIC_CONV_LAYER_H
-#define CXXBASIC_CONV_LAYER_H
+#ifndef CXXBASIC_CONV_LAYER_HPP
+#define CXXBASIC_CONV_LAYER_HPP
 
 #include <vector>
 #include "../Blob.hpp"
@@ -26,4 +26,4 @@ namespace caffe{
 }
 
 
-#endif //CXXBASIC_CONV_LAYER_H
+#endif //CXXBASIC_CONV_LAYER_HPP

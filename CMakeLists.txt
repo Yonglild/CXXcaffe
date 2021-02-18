@@ -8,6 +8,7 @@ include_directories(${CAFFE_INCLUDE_DIR}
         ${CAFFE_INCLUDE_DIR}/layers/base_conv_layer.hpp
         ${CAFFE_INCLUDE_DIR}/layers/conv_layer.hpp
         ${CAFFE_INCLUDE_DIR}/layers/pooling_layer.hpp
+        ${CAFFE_INCLUDE_DIR}/layers/batch_norm_layer.hpp
         ${CAFFE_INCLUDE_DIR}/proto/caffe.pb.h)
 
 add_executable(net net.cpp)
@@ -19,4 +20,5 @@ add_executable(shared_ptr shared_ptr.cpp)
 add_executable(base_conv_layer layers/base_conv_layer.cpp)
 add_executable(conv_layer layers/conv_layer.cpp)
 add_executable(pooling_layer layers/pooling_layer.cpp)
+add_executable(batch_norm_layer layers/batch_norm_layer.cpp)
 add_executable(im2col util/im2col.cpp)

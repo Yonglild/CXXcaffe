@@ -27,193 +27,11 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Blob">
-				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
+			<Target title="edit_cache">
 				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/util/im2col.hpp"/>
-					<Add directory="/util/math_functions.hpp"/>
-					<Add directory="/layers/base_conv_layer.hpp"/>
-					<Add directory="/layers/conv_layer.hpp"/>
-					<Add directory="/layers/pooling_layer.hpp"/>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/opt/ros/indigo/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Blob/fast">
-				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/util/im2col.hpp"/>
-					<Add directory="/util/math_functions.hpp"/>
-					<Add directory="/layers/base_conv_layer.hpp"/>
-					<Add directory="/layers/conv_layer.hpp"/>
-					<Add directory="/layers/pooling_layer.hpp"/>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/opt/ros/indigo/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="layer">
-				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/util/im2col.hpp"/>
-					<Add directory="/util/math_functions.hpp"/>
-					<Add directory="/layers/base_conv_layer.hpp"/>
-					<Add directory="/layers/conv_layer.hpp"/>
-					<Add directory="/layers/pooling_layer.hpp"/>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/opt/ros/indigo/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="layer/fast">
-				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/util/im2col.hpp"/>
-					<Add directory="/util/math_functions.hpp"/>
-					<Add directory="/layers/base_conv_layer.hpp"/>
-					<Add directory="/layers/conv_layer.hpp"/>
-					<Add directory="/layers/pooling_layer.hpp"/>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/opt/ros/indigo/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="shared_ptr">
-				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/util/im2col.hpp"/>
-					<Add directory="/util/math_functions.hpp"/>
-					<Add directory="/layers/base_conv_layer.hpp"/>
-					<Add directory="/layers/conv_layer.hpp"/>
-					<Add directory="/layers/pooling_layer.hpp"/>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/opt/ros/indigo/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="shared_ptr/fast">
-				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/util/im2col.hpp"/>
-					<Add directory="/util/math_functions.hpp"/>
-					<Add directory="/layers/base_conv_layer.hpp"/>
-					<Add directory="/layers/conv_layer.hpp"/>
-					<Add directory="/layers/pooling_layer.hpp"/>
-					<Add directory="/proto/caffe.pb.h"/>
-					<Add directory="/opt/ros/indigo/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -231,6 +49,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -263,6 +82,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -283,11 +103,265 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="Blob">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
-				<Option type="4"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/util/math_functions.hpp"/>
+					<Add directory="/layers/base_conv_layer.hpp"/>
+					<Add directory="/layers/conv_layer.hpp"/>
+					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Blob/fast">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/Blob" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/util/math_functions.hpp"/>
+					<Add directory="/layers/base_conv_layer.hpp"/>
+					<Add directory="/layers/conv_layer.hpp"/>
+					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 Blob/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="layer">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/util/math_functions.hpp"/>
+					<Add directory="/layers/base_conv_layer.hpp"/>
+					<Add directory="/layers/conv_layer.hpp"/>
+					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="layer/fast">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/util/math_functions.hpp"/>
+					<Add directory="/layers/base_conv_layer.hpp"/>
+					<Add directory="/layers/conv_layer.hpp"/>
+					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 layer/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="batch_norm_layer">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/batch_norm_layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/util/math_functions.hpp"/>
+					<Add directory="/layers/base_conv_layer.hpp"/>
+					<Add directory="/layers/conv_layer.hpp"/>
+					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 batch_norm_layer"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="batch_norm_layer/fast">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/batch_norm_layer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/util/math_functions.hpp"/>
+					<Add directory="/layers/base_conv_layer.hpp"/>
+					<Add directory="/layers/conv_layer.hpp"/>
+					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 batch_norm_layer/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shared_ptr">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/util/math_functions.hpp"/>
+					<Add directory="/layers/base_conv_layer.hpp"/>
+					<Add directory="/layers/conv_layer.hpp"/>
+					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shared_ptr/fast">
+				<Option output="/home/wyl/CXXcaffe/cmake-build-debug/shared_ptr" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wyl/CXXcaffe/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/util/im2col.hpp"/>
+					<Add directory="/util/math_functions.hpp"/>
+					<Add directory="/layers/base_conv_layer.hpp"/>
+					<Add directory="/layers/conv_layer.hpp"/>
+					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
+					<Add directory="/proto/caffe.pb.h"/>
+					<Add directory="/opt/ros/indigo/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 shared_ptr/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/wyl/CXXcaffe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -305,6 +379,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -337,6 +412,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -369,6 +445,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -401,6 +478,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -433,6 +511,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -465,6 +544,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -497,6 +577,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -529,6 +610,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -561,6 +643,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -593,6 +676,7 @@
 					<Add directory="/layers/base_conv_layer.hpp"/>
 					<Add directory="/layers/conv_layer.hpp"/>
 					<Add directory="/layers/pooling_layer.hpp"/>
+					<Add directory="/layers/batch_norm_layer.hpp"/>
 					<Add directory="/proto/caffe.pb.h"/>
 					<Add directory="/opt/ros/indigo/include"/>
 					<Add directory="/usr/include/c++/5"/>
@@ -625,6 +709,9 @@
 		</Unit>
 		<Unit filename="/home/wyl/CXXcaffe/layers/base_conv_layer.cpp">
 			<Option target="base_conv_layer"/>
+		</Unit>
+		<Unit filename="/home/wyl/CXXcaffe/layers/batch_norm_layer.cpp">
+			<Option target="batch_norm_layer"/>
 		</Unit>
 		<Unit filename="/home/wyl/CXXcaffe/layers/conv_layer.cpp">
 			<Option target="conv_layer"/>

@@ -1,8 +1,8 @@
 //
 // Created by wyl on 2021/1/8.
 //
-#ifndef CXXBASIC_BASE_CONV_LAYER_H
-#define CXXBASIC_BASE_CONV_LAYER_H
+#ifndef CXXBASIC_BASE_CONV_LAYER_HPP
+#define CXXBASIC_BASE_CONV_LAYER_HPP
 
 #include "../Blob.hpp"
 #include "../layer.hpp"
@@ -197,4 +197,4 @@ namespace caffe {
 
 }  // namespace caffe
 
-#endif //CXXBASIC_BASE_CONV_LAYER_H
+#endif //CXXBASIC_BASE_CONV_LAYER_HPP

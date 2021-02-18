@@ -46,10 +46,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/net.dir/DependInfo.cmake"
   "CMakeFiles/Blob.dir/DependInfo.cmake"
   "CMakeFiles/layer.dir/DependInfo.cmake"
+  "CMakeFiles/batch_norm_layer.dir/DependInfo.cmake"
   "CMakeFiles/shared_ptr.dir/DependInfo.cmake"
-  "CMakeFiles/net.dir/DependInfo.cmake"
   "CMakeFiles/base_conv_layer.dir/DependInfo.cmake"
   "CMakeFiles/im2col.dir/DependInfo.cmake"
   "CMakeFiles/conv_layer.dir/DependInfo.cmake"

@@ -65,6 +65,43 @@ CMAKE_SOURCE_DIR = /home/wyl/CXXcaffe
 CMAKE_BINARY_DIR = /home/wyl/CXXcaffe/cmake-build-debug
 
 #=============================================================================
+# Target rules for target CMakeFiles/net.dir
+
+# All Build rule for target.
+CMakeFiles/net.dir/all:
+	$(MAKE) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/depend
+	$(MAKE) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target net"
+.PHONY : CMakeFiles/net.dir/all
+
+# Include target in all.
+all: CMakeFiles/net.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/net.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/net.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/net.dir/rule
+
+# Convenience name for target.
+net: CMakeFiles/net.dir/rule
+
+.PHONY : net
+
+# clean rule for target.
+CMakeFiles/net.dir/clean:
+	$(MAKE) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/clean
+.PHONY : CMakeFiles/net.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/net.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/Blob.dir
 
 # All Build rule for target.
@@ -108,7 +145,7 @@ clean: CMakeFiles/Blob.dir/clean
 CMakeFiles/layer.dir/all:
 	$(MAKE) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/depend
 	$(MAKE) -f CMakeFiles/layer.dir/build.make CMakeFiles/layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target layer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target layer"
 .PHONY : CMakeFiles/layer.dir/all
 
 # Include target in all.
@@ -139,13 +176,50 @@ clean: CMakeFiles/layer.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/batch_norm_layer.dir
+
+# All Build rule for target.
+CMakeFiles/batch_norm_layer.dir/all:
+	$(MAKE) -f CMakeFiles/batch_norm_layer.dir/build.make CMakeFiles/batch_norm_layer.dir/depend
+	$(MAKE) -f CMakeFiles/batch_norm_layer.dir/build.make CMakeFiles/batch_norm_layer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target batch_norm_layer"
+.PHONY : CMakeFiles/batch_norm_layer.dir/all
+
+# Include target in all.
+all: CMakeFiles/batch_norm_layer.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/batch_norm_layer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/batch_norm_layer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/batch_norm_layer.dir/rule
+
+# Convenience name for target.
+batch_norm_layer: CMakeFiles/batch_norm_layer.dir/rule
+
+.PHONY : batch_norm_layer
+
+# clean rule for target.
+CMakeFiles/batch_norm_layer.dir/clean:
+	$(MAKE) -f CMakeFiles/batch_norm_layer.dir/build.make CMakeFiles/batch_norm_layer.dir/clean
+.PHONY : CMakeFiles/batch_norm_layer.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/batch_norm_layer.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/shared_ptr.dir
 
 # All Build rule for target.
 CMakeFiles/shared_ptr.dir/all:
 	$(MAKE) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/depend
 	$(MAKE) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target shared_ptr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=19,20 "Built target shared_ptr"
 .PHONY : CMakeFiles/shared_ptr.dir/all
 
 # Include target in all.
@@ -172,43 +246,6 @@ CMakeFiles/shared_ptr.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/shared_ptr.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/net.dir
-
-# All Build rule for target.
-CMakeFiles/net.dir/all:
-	$(MAKE) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/depend
-	$(MAKE) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target net"
-.PHONY : CMakeFiles/net.dir/all
-
-# Include target in all.
-all: CMakeFiles/net.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/net.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/net.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/net.dir/rule
-
-# Convenience name for target.
-net: CMakeFiles/net.dir/rule
-
-.PHONY : net
-
-# clean rule for target.
-CMakeFiles/net.dir/clean:
-	$(MAKE) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/clean
-.PHONY : CMakeFiles/net.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/net.dir/clean
 
 .PHONY : clean
 
@@ -256,7 +293,7 @@ clean: CMakeFiles/base_conv_layer.dir/clean
 CMakeFiles/im2col.dir/all:
 	$(MAKE) -f CMakeFiles/im2col.dir/build.make CMakeFiles/im2col.dir/depend
 	$(MAKE) -f CMakeFiles/im2col.dir/build.make CMakeFiles/im2col.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target im2col"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target im2col"
 .PHONY : CMakeFiles/im2col.dir/all
 
 # Include target in all.
@@ -293,7 +330,7 @@ clean: CMakeFiles/im2col.dir/clean
 CMakeFiles/conv_layer.dir/all:
 	$(MAKE) -f CMakeFiles/conv_layer.dir/build.make CMakeFiles/conv_layer.dir/depend
 	$(MAKE) -f CMakeFiles/conv_layer.dir/build.make CMakeFiles/conv_layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target conv_layer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target conv_layer"
 .PHONY : CMakeFiles/conv_layer.dir/all
 
 # Include target in all.
@@ -367,7 +404,7 @@ clean: CMakeFiles/SyncedMemory.dir/clean
 CMakeFiles/pooling_layer.dir/all:
 	$(MAKE) -f CMakeFiles/pooling_layer.dir/build.make CMakeFiles/pooling_layer.dir/depend
 	$(MAKE) -f CMakeFiles/pooling_layer.dir/build.make CMakeFiles/pooling_layer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target pooling_layer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wyl/CXXcaffe/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target pooling_layer"
 .PHONY : CMakeFiles/pooling_layer.dir/all
 
 # Include target in all.

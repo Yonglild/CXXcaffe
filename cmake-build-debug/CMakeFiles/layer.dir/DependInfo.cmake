@@ -15,6 +15,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/layers/base_conv_layer.hpp"
   "/layers/conv_layer.hpp"
   "/layers/pooling_layer.hpp"
+  "/layers/batch_norm_layer.hpp"
   "/proto/caffe.pb.h"
   )
 

@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/util/im2col.hpp -I/util/math_functions.hpp -I/layers/base_conv_layer.hpp -I/layers/conv_layer.hpp -I/layers/pooling_layer.hpp -I/proto/caffe.pb.h 
+CXX_INCLUDES = -I/util/im2col.hpp -I/util/math_functions.hpp -I/layers/base_conv_layer.hpp -I/layers/conv_layer.hpp -I/layers/pooling_layer.hpp -I/layers/batch_norm_layer.hpp -I/proto/caffe.pb.h 
 

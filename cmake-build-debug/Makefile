@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named net
+
+# Build rule for target.
+net: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 net
+.PHONY : net
+
+# fast build rule for target.
+net/fast:
+	$(MAKE) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/build
+.PHONY : net/fast
+
+#=============================================================================
 # Target rules for targets named Blob
 
 # Build rule for target.
@@ -137,6 +150,19 @@ layer/fast:
 .PHONY : layer/fast
 
 #=============================================================================
+# Target rules for targets named batch_norm_layer
+
+# Build rule for target.
+batch_norm_layer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 batch_norm_layer
+.PHONY : batch_norm_layer
+
+# fast build rule for target.
+batch_norm_layer/fast:
+	$(MAKE) -f CMakeFiles/batch_norm_layer.dir/build.make CMakeFiles/batch_norm_layer.dir/build
+.PHONY : batch_norm_layer/fast
+
+#=============================================================================
 # Target rules for targets named shared_ptr
 
 # Build rule for target.
@@ -148,19 +174,6 @@ shared_ptr: cmake_check_build_system
 shared_ptr/fast:
 	$(MAKE) -f CMakeFiles/shared_ptr.dir/build.make CMakeFiles/shared_ptr.dir/build
 .PHONY : shared_ptr/fast
-
-#=============================================================================
-# Target rules for targets named net
-
-# Build rule for target.
-net: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 net
-.PHONY : net
-
-# fast build rule for target.
-net/fast:
-	$(MAKE) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/build
-.PHONY : net/fast
 
 #=============================================================================
 # Target rules for targets named base_conv_layer
@@ -335,6 +348,33 @@ layers/base_conv_layer.cpp.s:
 	$(MAKE) -f CMakeFiles/base_conv_layer.dir/build.make CMakeFiles/base_conv_layer.dir/layers/base_conv_layer.cpp.s
 .PHONY : layers/base_conv_layer.cpp.s
 
+layers/batch_norm_layer.o: layers/batch_norm_layer.cpp.o
+
+.PHONY : layers/batch_norm_layer.o
+
+# target to build an object file
+layers/batch_norm_layer.cpp.o:
+	$(MAKE) -f CMakeFiles/batch_norm_layer.dir/build.make CMakeFiles/batch_norm_layer.dir/layers/batch_norm_layer.cpp.o
+.PHONY : layers/batch_norm_layer.cpp.o
+
+layers/batch_norm_layer.i: layers/batch_norm_layer.cpp.i
+
+.PHONY : layers/batch_norm_layer.i
+
+# target to preprocess a source file
+layers/batch_norm_layer.cpp.i:
+	$(MAKE) -f CMakeFiles/batch_norm_layer.dir/build.make CMakeFiles/batch_norm_layer.dir/layers/batch_norm_layer.cpp.i
+.PHONY : layers/batch_norm_layer.cpp.i
+
+layers/batch_norm_layer.s: layers/batch_norm_layer.cpp.s
+
+.PHONY : layers/batch_norm_layer.s
+
+# target to generate assembly for a file
+layers/batch_norm_layer.cpp.s:
+	$(MAKE) -f CMakeFiles/batch_norm_layer.dir/build.make CMakeFiles/batch_norm_layer.dir/layers/batch_norm_layer.cpp.s
+.PHONY : layers/batch_norm_layer.cpp.s
+
 layers/conv_layer.o: layers/conv_layer.cpp.o
 
 .PHONY : layers/conv_layer.o
@@ -477,11 +517,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... net"
 	@echo "... Blob"
 	@echo "... layer"
+	@echo "... batch_norm_layer"
 	@echo "... shared_ptr"
-	@echo "... net"
-	@echo "... edit_cache"
 	@echo "... base_conv_layer"
 	@echo "... im2col"
 	@echo "... conv_layer"
@@ -499,6 +540,9 @@ help:
 	@echo "... layers/base_conv_layer.o"
 	@echo "... layers/base_conv_layer.i"
 	@echo "... layers/base_conv_layer.s"
+	@echo "... layers/batch_norm_layer.o"
+	@echo "... layers/batch_norm_layer.i"
+	@echo "... layers/batch_norm_layer.s"
 	@echo "... layers/conv_layer.o"
 	@echo "... layers/conv_layer.i"
 	@echo "... layers/conv_layer.s"
